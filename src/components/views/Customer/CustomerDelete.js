@@ -16,11 +16,11 @@ class CustomerDelete extends Component {
         this.state = {
             open: false,
             token:cookie.load('token'),
-            user_id:cookie.load('user_id')
+            userid:cookie.load('userid')
         }
     }
     deleteCustomer() {
-        const url = 'http://h2j22020.vps.phps.kr/api/user/delete?user_id=' +this.props.user_id;
+        const url = 'http://h2j22020.vps.phps.kr/api/user/delete?userid=' +this.props.userid;
         axios.delete(url,{ headers: { Authorization: ` ${cookie.load('token')}` } })
             .then(response => {
                 console.log('response : ', JSON.stringify(response))
@@ -59,7 +59,7 @@ class CustomerDelete extends Component {
                         </Typography>
                     </DialogContent>
                     <DialogActions>
-                        <Button variant="contained" color="secondary" onClick={(e) => {this.deleteCustomer(this.props.user_id)}}>탈퇴</Button>
+                        <Button variant="contained" color="secondary" onClick={(e) => {this.deleteCustomer(this.props.userid)}}>탈퇴</Button>
                         <Button variant="text" color="primary" onClick={this.handleClose}>닫기</Button>
                     </DialogActions>
                 </Dialog>
