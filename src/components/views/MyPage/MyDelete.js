@@ -12,9 +12,9 @@ class MyDelete extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_id:cookie.load("user_id"),
+            userid:cookie.load("userid"),
             token:cookie.load("token"),
-            user_pwd:this.props.user_pwd,
+            passwd:this.props.passwd,
             delete: false
         }
     }
@@ -22,9 +22,9 @@ class MyDelete extends Component {
     deleteUser() {
         const url = 'http://h2j22020.vps.phps.kr/api/profile/drop'
         const user = {
-            user_id:cookie.load("user_id"),
+            userid:cookie.load("userid"),
             token:cookie.load("token"),
-            user_pwd:this.state.user_pwd
+            user_pwd:this.state.passwd
         }
         const config ={
             headers:{authorization:this.state.token}
@@ -32,7 +32,7 @@ class MyDelete extends Component {
         axios.post(url, user, config)
             .then(response => {
                 if (response.data.delete) {
-                    cookie.remove("user_id", {path: '/'});
+                    cookie.remove("userid", {path: '/'});
                     cookie.remove("token", {path: '/'});
                     cookie.remove("level", {path: '/'});
                     cookie.remove("login", {path: '/'});
@@ -79,9 +79,9 @@ class MyDelete extends Component {
                     <DialogContent>
                             <Input
                                 type='password'
-                                name='user_pwd'
+                                name='passwd'
                                 placeholder='패스워드'
-                                defaultValue={this.state.user_pwd}
+                                defaultValue={this.state.passwd}
                                 onInput={this.handleInput}
                             />
                         <Typography >
