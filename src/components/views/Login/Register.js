@@ -68,11 +68,15 @@ class Register extends Component {
             userid: this.state.userid,
             passwd: this.state.passwd,
             name: this.state.name,
-            pjon: this.state.student_id,
-            grade: this.state.grade,
-            semester: this.state.semester,
             phone: this.state.phone,
-            email: this.state.email
+            email: this.state.email,
+            address: this.state.address,
+            age: this.state.age,
+            sex: this.state.sex,
+            height: this.state.height,
+            weight: this.state.weight,
+            basic_metabolic: this.state.basic_metabolic,
+            bmi: this.state.bmi,
         }
         axios.post(url, register)
             .then(response => {
@@ -117,7 +121,7 @@ class Register extends Component {
                                 text='password'
                                 name="passwd"
                                 placeholder='비밀번호'
-                                value={this.state.user_pwd}
+                                value={this.state.passwd}
                                 onChange={this.handleInput}
                             />
                         </FormGroup>
@@ -162,10 +166,10 @@ class Register extends Component {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="email">성별</Label>
+                            <Label for="sex">성별</Label>
                             <Input
                                 text='text'
-                                name="email"
+                                name="sex"
                                 placeholder='성별'
                                 value={this.state.sex}
                                 onChange={this.handleInput}
