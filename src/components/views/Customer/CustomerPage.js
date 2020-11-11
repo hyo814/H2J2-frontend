@@ -26,7 +26,7 @@ class CustomerPage extends Component {
             loading: false,
             customers:[],
             token:cookie.load('token'),
-            user_id:cookie.load('user_id'),
+            userid:cookie.load('user_id'),
             level:cookie.load('level')
         }
     }
@@ -35,20 +35,22 @@ class CustomerPage extends Component {
         const { Customers } = this.props;
         return (
             <div>
-                {this.state.level !== '3' ?
+                {this.state.level !== '2' ?
                     <h3>&nbsp; 관리자 페이지 접근 권한이 없습니다.</h3> :
                     <>
                         <TableHead>
                             <TableRow>
-                                <TableCell align='center'>학번</TableCell>
-                                <TableCell align='center'>이름</TableCell>
                                 <TableCell align='center'>아이디</TableCell>
-                                <TableCell align='center'>학년</TableCell>
-                                <TableCell align='center'>학기</TableCell>
-                                <TableCell align='center'>전화번호</TableCell>
+                                <TableCell align='center'>이름</TableCell>
+                                <TableCell align='center'>번호</TableCell>
                                 <TableCell align='center'>이메일</TableCell>
-                                <TableCell align='center'>도서대출</TableCell>
-                                <TableCell align='center'>회원등급</TableCell>
+                                <TableCell align='center'>주소</TableCell>
+                                <TableCell align='center'>나이</TableCell>
+                                <TableCell align='center'>성별</TableCell>
+                                <TableCell align='center'>키</TableCell>
+                                <TableCell align='center'>몸무게</TableCell>
+                                <TableCell align='center'>기초대사량</TableCell>
+                                <TableCell align='center'>BMI</TableCell>
                                 <TableCell align='center'>비밀번호</TableCell>
                                 <TableCell align='center'>회원삭제</TableCell>
                                 <TableCell align='center'>수정</TableCell>
@@ -60,15 +62,15 @@ class CustomerPage extends Component {
                                 return (
                                     <CustomerDe
                                         stateRefresh={this.props.stateRefresh}
-                                        student_id={c.student_id}
-                                        name={c.name}
                                         user_id={c.user_id}
-                                        grade={c.grade}
-                                        semester={c.semester}
+                                        name={c.name}
                                         phone={c.phone}
                                         email={c.email}
-                                        rent={c.rent}
-                                        payment={c.payment}
+                                        age={c.age}
+                                        sex={c.sex}
+                                        height={c.height}
+                                        weight={c.weight}
+                                        basic_metabolic={c.basic_metabolic}
                                         level={c.level}
                                     > </CustomerDe>
                                 );
