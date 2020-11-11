@@ -36,7 +36,7 @@ class CustomerEdit extends React.Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
-        let url = 'http://fan.catholic.ac.kr:5000/api/user/edit';
+        let url = 'http://h2j22020.vps.phps.kr/api/user/edit';
         const put = {
             user_id: this.state.user_id,
             name: this.state.name,
