@@ -11,7 +11,7 @@ class MyPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_id: cookie.load("user_id"),
+            user_id: cookie.load("userid"),
             token: cookie.load("token"),
             level:cookie.load('level'),
             login:cookie.load('login'),
@@ -23,7 +23,7 @@ class MyPage extends Component {
         const config = {
             headers: {Authorization: this.state.token}
         }
-        await axios.get('http://h2j22020.vps.phps.kr/api/profile/info?user_id='+this.state.user_id, config)
+        await axios.get('http://h2j22020.vps.phps.kr/api/profile/info?userid='+this.state.userid, config)
             .then(response => {
                 this.setState({
                     user: response.data
