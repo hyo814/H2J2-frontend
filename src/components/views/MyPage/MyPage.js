@@ -11,7 +11,7 @@ class MyPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_id: cookie.load("userid"),
+            userid: cookie.load("userid"),
             token: cookie.load("token"),
             level:cookie.load('level'),
             login:cookie.load('login'),
