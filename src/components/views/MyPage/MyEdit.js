@@ -12,16 +12,19 @@ class MyEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_id: cookie.load("user_id"),
+            userid: cookie.load("userid"),
             token:cookie.load("token"),
-            user_pwd:this.props.user_pwd,
+            passwd:this.props.passwd,
             user_check:'',
             name: this.props.name,
-            student_id: this.props.student_id,
-            grade:this.props.grade,
-            semester: this.props.semester,
             phone:this.props.phone,
             email:this.props.email,
+            age:this.props.age,
+            sex:this.props.sex,
+            height:this.props.height,
+            weight:this.props.weight,
+            basic_metabolic:this.props.basic_metabolic,
+            bmi:this.props.bmi,
             edit: false
         }
         const config = {
@@ -34,11 +37,15 @@ class MyEdit extends React.Component {
                     user_id: response.data.user_id,
                     user_pwd:response.data.user_pwd,
                     name: response.data.name,
-                    student_id:  response.data.student_id,
-                    grade: response.data.grade,
-                    semester:  response.data.semester,
                     phone: response.data.phone,
                     email: response.data.email,
+                    address: response.data.address,
+                    age: response.data.age,
+                    sex: response.data.sex,
+                    height: response.data.height,
+                    weight: response.data.weight,
+                    basic_metabolic: response.data.basic_metabolic,
+                    bmi: response.data.bmi,
                     edit: false
                 })
             })
@@ -51,18 +58,14 @@ class MyEdit extends React.Component {
         console.log('componentDidMount');
         console.log(this.props)
     }
+
+    // 판별식은 우선 여기까지만 적겠습니다.
     handleFormSubmit = (e) => {
         e.preventDefault()
         if (!/([a-zA-Z0-9_-])/.test(this.state.user_pwd)) {
             alert('비밀번호를 다시 확인해주세요.')
         } else if (!/^([가-힣]*)$/.test(this.state.name)) {
             alert('이름을 다시 확인해주세요.')
-        } else if (!/^([0-9])+$/.test(this.state.student_id) && this.state.student_id.length !== 9) {
-            alert('학번은 총 9자리며 숫자만 입력해주세요')
-        } else if (!/^([0-9])+$/.test(this.state.grade) && this.state.grade < 5) {
-            alert('학년은 1~4학년까지 있습니다.')
-        } else if (!/(\d)/.test(this.state.semester) && this.state.semester < 3) {
-            alert('학기는 1~2학기만 가능합니다.')
         } else if (!/(\d{2,3}-\d{3,4}-\d{4})/.test(this.state.phone) && this.state.phone.length !== 13) {
             alert('전화번호를 다시 확인해주세요')
         } else if (!/([a-zA-Z0-9_-]+@[a-z]+.[a-z]+)/.test(this.state.email)) {
@@ -71,14 +74,18 @@ class MyEdit extends React.Component {
 
         let url = 'http://h2j22020.vps.phps.kr/api/profile/edit'
         const put = {
-            user_id: this.state.user_id,
-            user_pwd:this.state.user_pwd,
+            userid: this.state.userid,
+            passwd:this.state.passwd,
             name: this.state.name,
-            student_id: this.state.student_id,
-            grade: this.state.grade,
-            semester: this.state.semester,
             phone:this.state.phone,
             email:this.state.email,
+            address:this.state.address,
+            age:this.state.age,
+            sex:this.state.sex,
+            height:this.state.height,
+            weight:this.state.weight,
+            basic_metabolic:this.state.basic_metabolic,
+            bmi:this.state.bmi,
             user_check:this.state.user_check
         }
         const config ={
@@ -101,13 +108,21 @@ class MyEdit extends React.Component {
                 console.log(e);
             })
 
-
+//★ 고정하는 값에 대해서 고민 해보기
         this.setState({
-            user_id: this.state.user_id,
             name: this.state.name,
-            student_id: this.state.student_id,
-            grade: this.state.grade,
-            semester: this.state.semester,
+            userid: this.state.userid,
+            passwd:this.state.passwd,
+            phone:this.state.phone,
+            email:this.state.email,
+            address:this.state.address,
+            age:this.state.age,
+            sex:this.state.sex,
+            height:this.state.height,
+            weight:this.state.weight,
+            basic_metabolic:this.state.basic_metabolic,
+            bmi:this.state.bmi,
+            user_check:this.state.user_check,
             level: this.state.level,
             edit: false
         })
@@ -157,11 +172,15 @@ class MyEdit extends React.Component {
                         <TextField label="비밀번호" type="password" name="user_pwd"  value={this.state.user_pwd}  onChange={this.handleValueChange} /><br/>
                         <TextField label="비밀번호 확인" type="text" name="user_check"  value={this.state.user_check}  onChange={this.handleValueChange} /><br/>
                         <TextField label="이름" type="text" name="name"  value={this.state.name}  onChange={this.handleValueChange} /><br/>
-                        <TextField label="학번" type="text" name="student_id"  value={this.state.student_id}  onChange={this.handleValueChange} /><br/>
-                        <TextField label="학년" type="text" name="grade"  value={this.state.grade}  onChange={this.handleValueChange} /><br/>
-                        <TextField label="학기" type="text" name="semester"  value={this.state.semester}  onChange={this.handleValueChange} /><br/>
                         <TextField label="전화번호" type="text" name="phone"  value={this.state.phone} onChange={this.handleValueChange} /><br/>
                         <TextField label="이메일" type="text" name="email"  value={this.state.email} onChange={this.handleValueChange} /><br/>
+                        <TextField label="주소" type="text" name="address"  value={this.state.address} onChange={this.handleValueChange} /><br/>
+                        <TextField label="나이" type="text" name="age"  value={this.state.age} onChange={this.handleValueChange} /><br/>
+                        <TextField label="성별" type="text" name="sex"  value={this.state.sex} onChange={this.handleValueChange} /><br/>
+                        <TextField label="키" type="text" name="height"  value={this.state.height} onChange={this.handleValueChange} /><br/>
+                        <TextField label="몸무게" type="text" name="weight"  value={this.state.weight} onChange={this.handleValueChange} /><br/>
+                        <TextField label="기초대사량" type="text" name="basic_metabolic"  value={this.state.basic_metabolic} onChange={this.handleValueChange} /><br/>
+                        <TextField label="bmi" type="text" name="bmi"  value={this.state.bmi} onChange={this.handleValueChange} /><br/>
                     </DialogContent>
                     <DialogActions>
                         <Button outline color="primary" onClick={this.handleFormSubmit}>저장</Button>
