@@ -22,11 +22,18 @@ class CustomerEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_id: this.props.user_id,
+            userid: this.props.userid,
+            passwd:this.props.passwd,
+            user_check:'',
             name: this.props.name,
-            student_id: this.props.student_id,
-            grade: this.props.grade,
-            semester: this.props.semester,
+            phone:this.props.phone,
+            email:this.props.email,
+            age:this.props.age,
+            sex:this.props.sex,
+            height:this.props.height,
+            weight:this.props.weight,
+            basic_metabolic:this.props.basic_metabolic,
+            bmi:this.props.bmi,
             level: this.props.level,
             open: false,
             token:cookie.load('token'),
@@ -38,11 +45,17 @@ class CustomerEdit extends React.Component {
         e.preventDefault()
         let url = 'http://h2j22020.vps.phps.kr/api/user/edit';
         const put = {
-            user_id: this.state.user_id,
+            userid: this.state.userid,
             name: this.state.name,
-            student_id: this.state.student_id,
-            grade: this.state.grade,
-            semester: this.state.semester,
+            phone: this.state.phone,
+            email: this.state.email,
+            address: this.state.address,
+            age: this.state.age,
+            sex: this.state.sex,
+            height: this.state.height,
+            weight: this.state.weight,
+            basic_metabolic: this.state.basic_metabolic,
+            bmi: this.state.bmi,
             level: this.state.level,
         }
         console.log(put)
@@ -55,11 +68,17 @@ class CustomerEdit extends React.Component {
                 console.log(e);
             })
         this.setState({
-            user_id: this.state.user_id,
+            userid: this.state.userid,
             name: this.state.name,
-            student_id: this.state.student_id,
-            grade: this.state.grade,
-            semester: this.state.semester,
+            phone: this.state.phone,
+            email: this.state.email,
+            address: this.state.address,
+            age: this.state.age,
+            sex: this.state.sex,
+            height: this.state.height,
+            weight: this.state.weight,
+            basic_metabolic: this.state.basic_metabolic,
+            bmi: this.state.bmi,
             level: this.state.level,
             open: false
         })
@@ -77,11 +96,17 @@ class CustomerEdit extends React.Component {
     }
     handleClose = () => {
         this.setState({
-            user_id: this.state.user_id,
+            userid: this.state.userid,
             name: this.state.name,
-            student_id: this.state.student_id,
-            grade: this.state.grade,
-            semester: this.state.semester,
+            phone: this.state.phone,
+            email: this.state.email,
+            address: this.state.address,
+            age: this.state.age,
+            sex: this.state.sex,
+            height: this.state.height,
+            weight: this.state.weight,
+            basic_metabolic: this.state.basic_metabolic,
+            bmi: this.state.bmi,
             level: this.state.level,
             open: false
         })
@@ -94,19 +119,24 @@ class CustomerEdit extends React.Component {
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                     <DialogTitle>회원 정보 수정</DialogTitle>
                     <DialogContent>
-                        <TextField label="user_id" type="text" name="user_id"  value={this.state.user_id} onChange={this.handleValueChange} /><br/>
-                        <TextField label="name" type="text" name="name"  value={this.state.name}  onChange={this.handleValueChange} /><br/>
-                        <TextField label="student_id" type="text" name="student_id"  value={this.state.student_id}  onChange={this.handleValueChange} /><br/>
-                        <TextField label="grade" type="text" name="grade"  value={this.state.grade} onChange={this.handleValueChange} /><br/>
-                        <TextField label="semester" type="text" name="semester"  value={this.state.semester} onChange={this.handleValueChange} /><br/>
+                        <TextField label="아이디" type="text" name="user_id"  value={this.state.user_id}/><br/>
+                        <TextField label="이름" type="text" name="name"  value={this.state.name}  onChange={this.handleValueChange} /><br/>
+                        <TextField label="전화번호" type="text" name="phone"  value={this.state.phone} onChange={this.handleValueChange} /><br/>
+                        <TextField label="이메일" type="text" name="email"  value={this.state.email} onChange={this.handleValueChange} /><br/>
+                        <TextField label="주소" type="text" name="address"  value={this.state.address} onChange={this.handleValueChange} /><br/>
+                        <TextField label="나이" type="text" name="age"  value={this.state.age} onChange={this.handleValueChange} /><br/>
+                        <TextField label="성별" type="text" name="sex"  value={this.state.sex} onChange={this.handleValueChange} /><br/>
+                        <TextField label="키" type="text" name="height"  value={this.state.height} onChange={this.handleValueChange} /><br/>
+                        <TextField label="몸무게" type="text" name="weight"  value={this.state.weight} onChange={this.handleValueChange} /><br/>
+                        <TextField label="기초대사량" type="text" name="basic_metabolic"  value={this.state.basic_metabolic} onChange={this.handleValueChange} /><br/>
+                        <TextField label="bmi" type="text" name="bmi"  value={this.state.bmi} onChange={this.handleValueChange} /><br/>
                         <Select
                             label="level" type="text" name="level"
                             native
                             value={this.state.level}
                             onChange={this.handleValueChange}>
                             <option value={1}>준회원</option>
-                            <option value={2}>정회원</option>
-                            <option value={3}>관리자</option>
+                            <option value={2}>관리자</option>
                         </Select>
                     </DialogContent>
                     <DialogActions>
