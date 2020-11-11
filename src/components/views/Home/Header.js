@@ -34,12 +34,12 @@ class Header extends Component {
                             <li><a href="#">운동</a>
                                 <ul id="sub-menu">
                                     <li><a href="#" aria-label="subemenu">오늘운동</a></li>
-                                    <li><a href="#" aria-label="subemenu">부위|가슴</a></li>
-                                    <li><a href="#" aria-label="subemenu">부위|등</a></li>
-                                    <li><a href="#" aria-label="subemenu">부위|어깨</a></li>
-                                    <li><a href="#" aria-label="subemenu">부위|복부</a></li>
-                                    <li><a href="#" aria-label="subemenu">부위|하체</a></li>
-                                    <li><a href="#" aria-label="subemenu">부위|유산소</a></li>
+                                    <li><a href="#" aria-label="subemenu">가슴</a></li>
+                                    <li><a href="#" aria-label="subemenu">등</a></li>
+                                    <li><a href="#" aria-label="subemenu">어깨</a></li>
+                                    <li><a href="#" aria-label="subemenu">복부</a></li>
+                                    <li><a href="#" aria-label="subemenu">하체</a></li>
+                                    <li><a href="#" aria-label="subemenu">유산소</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">식단</a>
