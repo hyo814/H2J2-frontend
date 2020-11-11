@@ -20,6 +20,7 @@ class Register extends Component {
             weight: '',
             basic_metabolic: '',
             bmi: '',
+            user_check:'',
             id: false,
             register: false
         }
@@ -76,6 +77,7 @@ class Register extends Component {
             height: this.state.height,
             weight: this.state.weight,
             basic_metabolic: this.state.basic_metabolic,
+            user_check:this.state.user_check,
             bmi: this.state.bmi,
         }
         axios.post(url, register)
@@ -118,10 +120,20 @@ class Register extends Component {
                         <FormGroup>
                             <Label for="passwd">비밀번호</Label>
                             <Input
-                                text='password'
+                                type='password'
                                 name="passwd"
                                 placeholder='비밀번호'
                                 value={this.state.passwd}
+                                onChange={this.handleInput}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="user_check">비밀번호 확인</Label>
+                            <Input
+                                type='password'
+                                name="user_check"
+                                placeholder='비밀번호 확인'
+                                value={this.state.user_check}
                                 onChange={this.handleInput}
                             />
                         </FormGroup>

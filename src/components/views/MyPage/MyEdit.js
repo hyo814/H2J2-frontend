@@ -170,7 +170,7 @@ class MyEdit extends React.Component {
                     <DialogContent>
                         <TextField label="아이디" type="text" name="userid"  value={this.state.userid}/><br/>
                         <TextField label="비밀번호" type="password" name="passwd"  value={this.state.passwd}  onChange={this.handleValueChange} /><br/>
-                        <TextField label="비밀번호 확인" type="text" name="user_check"  value={this.state.user_check}  onChange={this.handleValueChange} /><br/>
+                        <TextField label="비밀번호 확인" type="password" name="user_check"  value={this.state.user_check}  onChange={this.handleValueChange} /><br/>
                         <TextField label="이름" type="text" name="name"  value={this.state.name}  onChange={this.handleValueChange} /><br/>
                         <TextField label="전화번호" type="text" name="phone"  value={this.state.phone} onChange={this.handleValueChange} /><br/>
                         <TextField label="이메일" type="text" name="email"  value={this.state.email} onChange={this.handleValueChange} /><br/>
