@@ -125,6 +125,11 @@
     box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
 }
 
+#main-text {
+    margin-bottom: 40px;
+
+}
+
 /*애니메이션*/
 #slider-wrap ul,
 #slider-pagination-wrap ul li {

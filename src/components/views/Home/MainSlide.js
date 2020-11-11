@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import "./MainSlide.css"
 import Slide_list from "./Slidelist";
+import {Card} from "reactstrap";
+import cookie from "react-cookies";
 
 
 const slideImages = [
@@ -106,11 +108,6 @@ class MainSlide extends Component {
         }
         return (
             <>
-                <br/>
-                <p><b>당신만의 큐레이팅 PT 웹사이트, 큐피트!</b></p>
-                매일 달라지는 <b>추천 운동</b>과 <b>자세교정 서비스</b>를 경험해보세요.<br/>
-                운동할 때 고민했던 <b>식단,옷...</b> 큐피트가 한 번에 추천할게요.<br/><br/>
-                <b>이제 <a href="/login">시작</a> 해볼까요?</b><br/>
                 <div id="main-wrap">
                     <div id="slider-wrap">
                         <ul id="slider">
@@ -128,7 +125,15 @@ class MainSlide extends Component {
                         </div>
                     </div>
                 </div>
-            </>
+
+
+                <br/>
+                <p id="main-text"><b>당신만의 큐레이팅 PT 웹사이트, 큐피트!</b><br/><br/>
+                매일 달라지는 <b>추천 운동</b>과 <b>자세교정 서비스</b>를 경험해보세요.<br/>
+                운동할 때 고민했던 식단&옷까지 큐피트가 한 번에 추천할게요.<br/><br/>
+                <b>이제 <a href="/login">시작</a> 해볼까요?</b><br/></p>
+
+                </>
                 );
                 }
                 }
