@@ -62,7 +62,7 @@ class CustomerPage extends Component {
                                 return (
                                     <CustomerDe
                                         stateRefresh={this.props.stateRefresh}
-                                        user_id={c.user_id}
+                                        userid={c.userid}
                                         name={c.name}
                                         phone={c.phone}
                                         email={c.email}
