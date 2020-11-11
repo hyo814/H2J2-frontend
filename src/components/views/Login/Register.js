@@ -26,7 +26,7 @@ class Register extends Component {
     }
 
     idCheck = () => {
-        axios.get('http://h2j22020.vps.phps.kr/api/check/id?user_id=' + this.state.userid)
+        axios.get('http://h2j22020.vps.phps.kr/api/check/id?userid=' + this.state.userid)
             .then(response => {
                 console.log(response)
                 if (response.data.id) {
