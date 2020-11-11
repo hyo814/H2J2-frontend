@@ -30,12 +30,12 @@ class MyEdit extends React.Component {
         const config = {
             headers: {Authorization: this.state.token}
         }
-         axios.get('http://h2j22020.vps.phps.kr/api/profile/info?user_id='+this.state.user_id, config)
+         axios.get('http://h2j22020.vps.phps.kr/api/profile/info?userid='+this.state.userid, config)
             .then(response => {
                 console.log(response)
                 this.setState({
-                    user_id: response.data.user_id,
-                    user_pwd:response.data.user_pwd,
+                    userid: response.data.userid,
+                    passwd:response.data.passwd,
                     name: response.data.name,
                     phone: response.data.phone,
                     email: response.data.email,
@@ -62,7 +62,7 @@ class MyEdit extends React.Component {
     // 판별식은 우선 여기까지만 적겠습니다.
     handleFormSubmit = (e) => {
         e.preventDefault()
-        if (!/([a-zA-Z0-9_-])/.test(this.state.user_pwd)) {
+        if (!/([a-zA-Z0-9_-])/.test(this.state.passwd)) {
             alert('비밀번호를 다시 확인해주세요.')
         } else if (!/^([가-힣]*)$/.test(this.state.name)) {
             alert('이름을 다시 확인해주세요.')
@@ -93,7 +93,7 @@ class MyEdit extends React.Component {
         }
         axios.put(url, put, config)
             .then(response => {
-                if (this.state.user_pwd!==this.state.user_check) {
+                if (this.state.passwd!==this.state.user_check) {
                     alert("비밀번호가 일치하지 않습니다.")
                 }
                 else if (response.data.edit){
@@ -138,7 +138,7 @@ class MyEdit extends React.Component {
         const config = {
             headers: {Authorization: this.state.token}
         }
-        await axios.get('http://h2j22020.vps.phps.kr/api/profile/info?user_id='+this.state.user_id, config)
+        await axios.get('http://h2j22020.vps.phps.kr/api/profile/info?userid='+this.state.userid, config)
             .then(response => {
                 console.log(response)
                 this.setState({
@@ -168,8 +168,8 @@ class MyEdit extends React.Component {
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                     <DialogTitle id="alert-dialog-title" onClose={this.handleClose} > 마이페이지 </DialogTitle>
                     <DialogContent>
-                        <TextField label="아이디" type="text" name="user_id"  value={this.state.user_id}/><br/>
-                        <TextField label="비밀번호" type="password" name="user_pwd"  value={this.state.user_pwd}  onChange={this.handleValueChange} /><br/>
+                        <TextField label="아이디" type="text" name="userid"  value={this.state.userid}/><br/>
+                        <TextField label="비밀번호" type="password" name="passwd"  value={this.state.passwd}  onChange={this.handleValueChange} /><br/>
                         <TextField label="비밀번호 확인" type="text" name="user_check"  value={this.state.user_check}  onChange={this.handleValueChange} /><br/>
                         <TextField label="이름" type="text" name="name"  value={this.state.name}  onChange={this.handleValueChange} /><br/>
                         <TextField label="전화번호" type="text" name="phone"  value={this.state.phone} onChange={this.handleValueChange} /><br/>
