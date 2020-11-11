@@ -29,7 +29,7 @@ class CustomerDetail extends Component{
             customers:[],
             details: [],
             token:cookie.load('token'),
-            user_id:cookie.load('user_id'),
+            userid:cookie.load('userid'),
         }
         this.stateRefresh = this.stateRefresh.bind(this);
     }
