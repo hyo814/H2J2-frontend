@@ -134,7 +134,7 @@ class MyEdit extends React.Component {
         this.setState(nextState);
     }
 
-    MyFan = async () => {
+    MyEdit = async () => {
         const config = {
             headers: {Authorization: this.state.token}
         }

@@ -19,7 +19,7 @@ class MyPage extends Component {
         };
     }
 
-    MyFan = async () => {
+    MyPage = async () => {
         const config = {
             headers: {Authorization: this.state.token}
         }
@@ -35,7 +35,7 @@ class MyPage extends Component {
     }
 
     componentDidMount() {
-        this.MyFan()
+        this.MyPage()
     }
 
     render() {
