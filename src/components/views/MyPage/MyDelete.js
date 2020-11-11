@@ -24,7 +24,7 @@ class MyDelete extends Component {
         const user = {
             userid:cookie.load("userid"),
             token:cookie.load("token"),
-            user_pwd:this.state.passwd
+            passwd:this.state.passwd
         }
         const config ={
             headers:{authorization:this.state.token}
