@@ -79,7 +79,7 @@ class MyDelete extends Component {
                     <DialogContent>
                             <Input
                                 type='password'
-                                name='passwd'
+                                name='user_pwd'
                                 placeholder='패스워드'
                                 defaultValue={this.state.passwd}
                                 onInput={this.handleInput}
@@ -89,7 +89,7 @@ class MyDelete extends Component {
                         </Typography>
                     </DialogContent>
                     <DialogActions>
-                        <Button outline color="danger" onClick={() => {this.deleteUser(this.props.user_id)}}>탈퇴</Button>
+                        <Button outline color="danger" onClick={() => {this.deleteUser(this.props.userid)}}>탈퇴</Button>
                         <Button outline color="primary" onClick={this.handleClose}>닫기</Button>
                     </DialogActions>
                 </Dialog>
