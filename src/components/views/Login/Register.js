@@ -18,8 +18,6 @@ class Register extends Component {
             sex: '',
             height: '',
             weight: '',
-            basic_metabolic: '',
-            bmi: '',
             user_check:'',
             id: false,
             register: false
@@ -76,9 +74,7 @@ class Register extends Component {
             sex: this.state.sex,
             height: this.state.height,
             weight: this.state.weight,
-            basic_metabolic: this.state.basic_metabolic,
-            user_check:this.state.user_check,
-            bmi: this.state.bmi,
+            user_check:this.state.user_check
         }
         axios.post(url, register)
             .then(response => {
@@ -204,26 +200,6 @@ class Register extends Component {
                                 name="weight"
                                 placeholder='몸무게'
                                 value={this.state.weight}
-                                onChange={this.handleInput}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="height">basic_metabolic</Label>
-                            <Input
-                                text='text'
-                                name="basic_metabolic"
-                                placeholder='기초대사량'
-                                value={this.state.basic_metabolic}
-                                onChange={this.handleInput}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="height">bmi</Label>
-                            <Input
-                                text='text'
-                                name="bmi"
-                                placeholder='bmi'
-                                value={this.state.bmi}
                                 onChange={this.handleInput}
                             />
                         </FormGroup>
