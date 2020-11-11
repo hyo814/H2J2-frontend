@@ -12,7 +12,7 @@ import styled from "styled-components";
 
 class Logout extends Component {
     state = {
-        user_id: cookie.load("user_id"),
+        user_id: cookie.load("userid"),
         token: cookie.load("token"),
         level: cookie.load("level"),
         login: cookie.load("login"),
@@ -20,11 +20,11 @@ class Logout extends Component {
     };
 
     handleClick = () => {
-        axios.get('http://h2j22020.vps.phps.kr/api/logout?user_id=' + this.state.user_id)
+        axios.get('http://h2j22020.vps.phps.kr/api/logout?userid=' + this.state.userid)
             .then(response => {
                 console.log('response : ', JSON.stringify(response))
                 if (response.data.logout) {
-                    cookie.remove("user_id", {path: '/'});
+                    cookie.remove("userid", {path: '/'});
                     cookie.remove("token", {path: '/'});
                     cookie.remove("level", {path: '/'});
                     cookie.remove("login", {path: '/'});
