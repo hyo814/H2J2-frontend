@@ -19,7 +19,7 @@ class Header extends Component {
                 </button>
                 <div id="head-util">
                         <ul id="login">
-                            {this.state.level !=="3" ? <a href="/mypage">마이페이지</a>:
+                            {this.state.level !=="2" ? <a href="/mypage">마이페이지</a>:
                                 <a href="/customer">고객관리</a>}&nbsp;&nbsp;|&nbsp;&nbsp;
                             {this.state.login ? <Logout/> :
                                 <a href="/login">로그인</a>

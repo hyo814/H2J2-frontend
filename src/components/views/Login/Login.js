@@ -9,8 +9,8 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_id: '',
-            user_pwd: '',
+            userid: '',
+            passwd: '',
             token:'',
             level:'',
             login: false
@@ -19,22 +19,22 @@ class Login extends Component {
 
     handleClick = (e) => {
         e.preventDefault()
-        if (!/^([a-z0-9]+)$/.test(this.state.user_id)) {
+        if (!/^([a-z0-9]+)$/.test(this.state.userid)) {
             alert('아이디를 확인해주세요.')
-        } else if (!/([a-zA-Z0-9_-])/.test(this.state.user_pwd)) {
+        } else if (!/([a-zA-Z0-9_-])/.test(this.state.passwd)) {
             alert('비밀번호를 확인해주세요.')
         }
         let url = 'http://h2j22020.vps.phps.kr/api/login';
         const post = {
-            user_id: this.state.user_id,
-            user_pwd: this.state.user_pwd
+            user_id: this.state.userid,
+            user_pwd: this.state.passwd
         }
         axios.post(url, post)
             .then(response => {
                 if (response.data.login==="True"){
                     this.setState({
                         token:response.data.token,
-                        user_id:response.data.user_id,
+                        userid:response.data.userid,
                         level:response.data.level,
                         login:response.data.login
                     })
@@ -46,7 +46,7 @@ class Login extends Component {
                         expires,
                         httponly:false,
                     }
-                    cookie.save("user_id",this.state.user_id,cookieOptions);
+                    cookie.save("userid",this.state.userid,cookieOptions);
                     cookie.save("token",this.state.token,cookieOptions);
                     cookie.save("level",this.state.level,cookieOptions);
                     cookie.save("login",this.state.login,cookieOptions);
@@ -83,9 +83,9 @@ class Login extends Component {
                             <Label for="user_id" className="mr-sm-2">아이디 </Label>
                             <Input
                                 type='text'
-                                name='user_id'
+                                name='userid'
                                 placeholder='아이디'
-                                defaultValue={this.state.user_id}
+                                defaultValue={this.state.userid}
                                 onInput={this.handleInput}
                             />
                         </FormGroup>
@@ -93,9 +93,9 @@ class Login extends Component {
                             <Label for="user_id" className="mr-sm-2">패스워드</Label>
                             <Input
                                 type='password'
-                                name='user_pwd'
+                                name='passwd'
                                 placeholder='패스워드'
-                                defaultValue={this.state.user_pwd}
+                                defaultValue={this.state.passwd}
                                 onInput={this.handleInput}
                             />
                         </FormGroup>
