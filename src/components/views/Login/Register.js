@@ -144,12 +144,22 @@ class Register extends Component {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="phone">번호</Label>
+                            <Label for="phone">전화번호</Label>
                             <Input
                                 text='text'
                                 name="phone"
                                 placeholder='휴대폰 번호'
                                 value={this.state.phone}
+                                onChange={this.handleInput}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="email">이메일</Label>
+                            <Input
+                                text='text'
+                                name="email"
+                                placeholder='이메일'
+                                value={this.state.email}
                                 onChange={this.handleInput}
                             />
                         </FormGroup>
@@ -174,17 +184,17 @@ class Register extends Component {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="sex">성별</Label>
+                            <Label for="sex">성별(예: 여자, 남자)</Label>
                             <Input
                                 text='text'
                                 name="sex"
-                                placeholder='성별'
+                                placeholder='성별(예: 여자, 남자)'
                                 value={this.state.sex}
                                 onChange={this.handleInput}
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="height">height</Label>
+                            <Label for="height">키</Label>
                             <Input
                                 text='text'
                                 name="height"
@@ -194,7 +204,7 @@ class Register extends Component {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="weight">weight</Label>
+                            <Label for="weight">몸무게</Label>
                             <Input
                                 text='text'
                                 name="weight"
@@ -218,7 +228,7 @@ class Register extends Component {
 
 const Div = styled.div`
     text-align:left;
-    width:40%;
+    width:30%;
     margin: auto;
     `;
 
