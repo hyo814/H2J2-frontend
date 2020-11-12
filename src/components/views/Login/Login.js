@@ -26,8 +26,8 @@ class Login extends Component {
         }
         let url = 'http://h2j22020.vps.phps.kr/api/login';
         const post = {
-            user_id: this.state.userid,
-            user_pwd: this.state.passwd
+            userid: this.state.userid,
+            passwd: this.state.passwd
         }
         axios.post(url, post)
             .then(response => {
@@ -90,7 +90,7 @@ class Login extends Component {
                             />
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                            <Label for="user_id" className="mr-sm-2">패스워드</Label>
+                            <Label for="passwd" className="mr-sm-2">패스워드</Label>
                             <Input
                                 type='password'
                                 name='passwd'
