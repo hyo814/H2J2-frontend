@@ -40,7 +40,7 @@ class Login extends Component {
                     })
                     let expires = new Date();
                     let tmp = expires.getDate();
-                    expires.setDate(tmp+1);
+                    expires.setDate(tmp);
                     const cookieOptions = {
                         path:'/',
                         expires,

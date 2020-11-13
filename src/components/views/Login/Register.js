@@ -47,7 +47,7 @@ class Register extends Component {
             id: false
         })
     }
-    // 판별식을 칼럼명에 다 사용을 해야하는 지 궁금합니다.
+
     handleFormSubmit = (e) => {
         e.preventDefault()
         if (!/^([a-z0-9]+)$/.test(this.state.userid)) {
