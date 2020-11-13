@@ -59,7 +59,6 @@ class MyEdit extends React.Component {
         console.log(this.props)
     }
 
-    // 판별식은 우선 여기까지만 적겠습니다.
     handleFormSubmit = (e) => {
         e.preventDefault()
         if (!/([a-zA-Z0-9_-])/.test(this.state.passwd)) {

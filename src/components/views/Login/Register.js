@@ -95,7 +95,7 @@ class Register extends Component {
                     window.location.href = '/login'
                 } else {
                     console.log('response : ', JSON.stringify(response))
-                    alert("다시 확인 하세요")
+                    alert("핸드폰 또는 이메일이 중복입니다.")
                 }
             })
             .catch(e => {
