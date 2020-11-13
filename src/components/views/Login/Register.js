@@ -25,7 +25,7 @@ class Register extends Component {
     }
 
     idCheck = () => {
-        axios.get('http://h2j22020.vps.phps.kr/api/check/id?userid=' + this.state.userid)
+        axios.get('http://h2j22020.vps.phps.kr:5000/api/check/id?userid=' + this.state.userid)
             .then(response => {
                 console.log(response)
                 if (response.data.id) {
@@ -229,7 +229,7 @@ class Register extends Component {
 const Div = styled.div`
     text-align:left;
     width:30%;
-    margin: auto;
+    margin: 5% auto;
     `;
 
 export default withRouter(Register);

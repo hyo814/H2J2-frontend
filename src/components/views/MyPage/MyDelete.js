@@ -20,7 +20,7 @@ class MyDelete extends Component {
     }
 
     deleteUser() {
-        const url = 'http://h2j22020.vps.phps.kr/api/profile/drop'
+        const url = 'http://h2j22020.vps.phps.kr:5000/api/profile/drop'
         const user = {
             userid:cookie.load("userid"),
             token:cookie.load("token"),

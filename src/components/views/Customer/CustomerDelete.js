@@ -20,7 +20,7 @@ class CustomerDelete extends Component {
         }
     }
     deleteCustomer() {
-        const url = 'http://h2j22020.vps.phps.kr/api/user/delete?userid=' +this.props.userid;
+        const url = 'http://h2j22020.vps.phps.kr:5000/api/user/delete?userid=' +this.props.userid;
         axios.delete(url,{ headers: { Authorization: ` ${cookie.load('token')}` } })
             .then(response => {
                 console.log('response : ', JSON.stringify(response))

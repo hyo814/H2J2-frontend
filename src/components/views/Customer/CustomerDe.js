@@ -17,7 +17,7 @@ class CustomerDe extends Component {
     };
 
     pwReset = async () => {
-        axios.post('http://h2j22020.vps.phps.kr/api/reset/pwd', {headers: {Authorization: ` ${cookie.load('token')}`}})
+        axios.post('http://h2j22020.vps.phps.kr:5000/api/reset/pwd', {headers: {Authorization: ` ${cookie.load('token')}`}})
             .then(({data}) => {
                 this.setState({
                         loading: true,

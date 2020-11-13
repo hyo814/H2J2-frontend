@@ -1,14 +1,11 @@
 import React, {Component} from "react";
 import "./MainSlide.css"
 import Slide_list from "./Slidelist";
-import {Card} from "reactstrap";
-import cookie from "react-cookies";
-
 
 const slideImages = [
     {
         id: 1,
-        content: 'https://ifh.cc/g/lI2HaF.jpg'
+        content: 'https://ifh.cc/g/0d2g0L.jpg'
     },
     {
         id: 2,

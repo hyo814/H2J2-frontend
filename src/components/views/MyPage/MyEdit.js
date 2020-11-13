@@ -30,7 +30,7 @@ class MyEdit extends React.Component {
         const config = {
             headers: {Authorization: this.state.token}
         }
-         axios.get('http://h2j22020.vps.phps.kr/api/profile/info?userid='+this.state.userid, config)
+         axios.get('http://h2j22020.vps.phps.kr:5000/api/profile/info?userid='+this.state.userid, config)
             .then(response => {
                 console.log(response)
                 this.setState({
@@ -72,7 +72,7 @@ class MyEdit extends React.Component {
             alert('이메일을 확인해주세요')
         }
 
-        let url = 'http://h2j22020.vps.phps.kr/api/profile/edit'
+        let url = 'http://h2j22020.vps.phps.kr:5000/api/profile/edit'
         const put = {
             userid: this.state.userid,
             passwd:this.state.passwd,
@@ -138,7 +138,7 @@ class MyEdit extends React.Component {
         const config = {
             headers: {Authorization: this.state.token}
         }
-        await axios.get('http://h2j22020.vps.phps.kr/api/profile/info?userid='+this.state.userid, config)
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/profile/info?userid='+this.state.userid, config)
             .then(response => {
                 console.log(response)
                 this.setState({

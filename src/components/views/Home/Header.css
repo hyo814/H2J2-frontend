@@ -32,13 +32,13 @@ ul, li {
     margin-right: 12%;
     text-align: right;
     color: #5c7cfa ;
-
 }
 
 #head-util > ul > li> a {
     text-decoration: none;
     color: black;
     font-size: medium;
+    font-family:'Do Hyeon', sans-serif;
 }
 #cupid > h1 > a {
     text-decoration: none;
@@ -61,7 +61,6 @@ ul, li {
     display: block;
     padding: 14px 72px;
     border-top: black;
-
 }
 
 #main-menu > h1 {

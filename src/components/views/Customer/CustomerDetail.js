@@ -43,7 +43,7 @@ class CustomerDetail extends Component{
 
 
     loadCus = async () => {
-        await axios.get('http://h2j22020.vps.phps.kr/api/user/list',{ headers: { Authorization: ` ${cookie.load('token')}` } })
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/user/list',{ headers: { Authorization: ` ${cookie.load('token')}` } })
             .then(({ data }) => {
                 this.setState({
                     loading: true,

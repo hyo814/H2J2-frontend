@@ -23,7 +23,7 @@ class MyPage extends Component {
         const config = {
             headers: {Authorization: this.state.token}
         }
-        await axios.get('http://h2j22020.vps.phps.kr/api/profile/info?userid='+this.state.userid, config)
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/profile/info?userid='+this.state.userid, config)
             .then(response => {
                 this.setState({
                     user: response.data
@@ -66,7 +66,7 @@ class MyPage extends Component {
 
 const Div = styled.div`
     width:50%;
-    margin: auto;
+    margin: 5% auto;
     `;
 
 export default withRouter(MyPage);

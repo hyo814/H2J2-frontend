@@ -24,7 +24,7 @@ class Login extends Component {
         } else if (!/([a-zA-Z0-9_-])/.test(this.state.passwd)) {
             alert('비밀번호를 확인해주세요.')
         }
-        let url = 'http://h2j22020.vps.phps.kr/api/login';
+        let url = 'http://h2j22020.vps.phps.kr:5000/api/login';
         const post = {
             userid: this.state.userid,
             passwd: this.state.passwd

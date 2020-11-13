@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Button, Input} from 'reactstrap';
 import axios from "axios";
 import cookie from 'react-cookies'
-import {withRouter} from "react-router-dom";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -19,7 +18,7 @@ class Logout extends Component {
     };
 
     handleClick = () => {
-        axios.get('http://fan.catholic.ac.kr:5000/api/logout?userid=' + this.state.userid)
+        axios.get('http://h2j22020.vps.phps.kr:5000/api/logout?userid=' + this.state.userid)
             .then(response => {
                 console.log('response : ', JSON.stringify(response))
                 if (response.data.logout) {
