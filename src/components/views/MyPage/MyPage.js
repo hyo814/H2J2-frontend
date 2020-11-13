@@ -6,6 +6,7 @@ import cookie from 'react-cookies'
 import axios from "axios";
 import MyEdit from "./MyEdit";
 import MyDelete from "./MyDelete";
+import BodyInfo from "../MyBody/BodyInfo";
 
 class MyPage extends Component {
     constructor(props) {

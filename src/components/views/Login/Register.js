@@ -60,9 +60,19 @@ class Register extends Component {
             alert('전화번호를 다시 확인해주세요')
         } else if (!/([a-zA-Z0-9_-]+@[a-z]+.[a-z]+)/.test(this.state.email)) {
             alert('이메일을 확인해주세요')
+        } else if (!this.state.address){
+            alert('주소를 확인 해주세요')
+        } else if (!this.state.age){
+            alert('나이를 입력해주세요')
+        } else if (!this.state.sex){
+            alert('성별을 입력해주세요')
+        } else if (!this.state.height){
+            alert("키를 입력해주세요")
+        } else if (!this.state.weight) {
+            alert('몸무게를 입력해주세요')
         }
 
-        let url = 'http://h2j22020.vps.phps.kr/api/register';
+        let url = 'http://h2j22020.vps.phps.kr:5000/api/register';
         const register = {
             userid: this.state.userid,
             passwd: this.state.passwd,
@@ -78,7 +88,15 @@ class Register extends Component {
         }
         axios.post(url, register)
             .then(response => {
-                console.log('response : ', JSON.stringify(response))
+                if (this.state.user_check !== this.state.passwd) {
+                    alert("비밀번호가 일치하지 않습니다.")
+                } else if (response.data.register) {
+                    alert('회원가입이 되셨습니다!')
+                    window.location.href = '/login'
+                } else {
+                    console.log('response : ', JSON.stringify(response))
+                    alert("다시 확인 하세요")
+                }
             })
             .catch(e => {
                 console.log(e);

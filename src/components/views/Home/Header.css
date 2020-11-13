@@ -76,7 +76,7 @@ ul, li {
     position: absolute;
     background: #182952;
     opacity: 0;
-    visibility: visible;
+    visibility: hidden;
     transition: all 0.15s ease-in;
     z-index: 10;
 }
