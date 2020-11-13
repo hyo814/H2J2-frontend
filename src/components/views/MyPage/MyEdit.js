@@ -23,8 +23,6 @@ class MyEdit extends React.Component {
             sex:this.props.sex,
             height:this.props.height,
             weight:this.props.weight,
-            basic_metabolic:this.props.basic_metabolic,
-            bmi:this.props.bmi,
             edit: false
         }
         const config = {
@@ -44,8 +42,6 @@ class MyEdit extends React.Component {
                     sex: response.data.sex,
                     height: response.data.height,
                     weight: response.data.weight,
-                    basic_metabolic: response.data.basic_metabolic,
-                    bmi: response.data.bmi,
                     edit: false
                 })
             })
@@ -69,6 +65,16 @@ class MyEdit extends React.Component {
             alert('전화번호를 다시 확인해주세요')
         } else if (!/([a-zA-Z0-9_-]+@[a-z]+.[a-z]+)/.test(this.state.email)) {
             alert('이메일을 확인해주세요')
+        } else if (!this.state.address){
+            alert('주소를 확인 해주세요')
+        } else if (!this.state.age){
+            alert('나이를 입력해주세요')
+        } else if (!this.state.sex){
+            alert('성별을 입력해주세요')
+        } else if (!this.state.height){
+            alert("키를 입력해주세요")
+        } else if (!this.state.weight) {
+            alert('몸무게를 입력해주세요')
         }
 
         let url = 'http://h2j22020.vps.phps.kr:5000/api/profile/edit'
@@ -83,8 +89,6 @@ class MyEdit extends React.Component {
             sex:this.state.sex,
             height:this.state.height,
             weight:this.state.weight,
-            basic_metabolic:this.state.basic_metabolic,
-            bmi:this.state.bmi,
             user_check:this.state.user_check
         }
         const config ={
@@ -107,7 +111,6 @@ class MyEdit extends React.Component {
                 console.log(e);
             })
 
-//★ 고정하는 값에 대해서 고민 해보기
         this.setState({
             name: this.state.name,
             userid: this.state.userid,
@@ -119,8 +122,6 @@ class MyEdit extends React.Component {
             sex:this.state.sex,
             height:this.state.height,
             weight:this.state.weight,
-            basic_metabolic:this.state.basic_metabolic,
-            bmi:this.state.bmi,
             user_check:this.state.user_check,
             level: this.state.level,
             edit: false
@@ -162,10 +163,10 @@ class MyEdit extends React.Component {
     render() {
         console.log(this.state.user)
         return (
-            <span>
+            <>
                 <Button outline color="primary" onClick={this.handleClickOpen}>수정</Button>
                 <Dialog open={this.state.open} onClose={this.handleClose}>
-                    <DialogTitle id="alert-dialog-title" onClose={this.handleClose} > 마이페이지 </DialogTitle>
+                    <DialogTitle id="alert-dialog-title" onClose={this.handleClose} ><h2>마이페이지</h2> </DialogTitle>
                     <DialogContent>
                         <TextField label="아이디" type="text" name="userid"  value={this.state.userid}/><br/>
                         <TextField label="비밀번호" type="password" name="passwd"  value={this.state.passwd}  onChange={this.handleValueChange} /><br/>
@@ -178,15 +179,13 @@ class MyEdit extends React.Component {
                         <TextField label="성별" type="text" name="sex"  value={this.state.sex} onChange={this.handleValueChange} /><br/>
                         <TextField label="키" type="text" name="height"  value={this.state.height} onChange={this.handleValueChange} /><br/>
                         <TextField label="몸무게" type="text" name="weight"  value={this.state.weight} onChange={this.handleValueChange} /><br/>
-                        <TextField label="기초대사량" type="text" name="basic_metabolic"  value={this.state.basic_metabolic} onChange={this.handleValueChange} /><br/>
-                        <TextField label="bmi" type="text" name="bmi"  value={this.state.bmi} onChange={this.handleValueChange} /><br/>
                     </DialogContent>
                     <DialogActions>
                         <Button outline color="primary" onClick={this.handleFormSubmit}>저장</Button>
                         <Button outline color="secondary" onClick={this.handleClose}>닫기</Button>
                     </DialogActions>
                 </Dialog>
-            </span>
+            </>
         );
     }
 }
