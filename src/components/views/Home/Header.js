@@ -33,26 +33,27 @@ class Header extends Component {
                             <li><a href="/">홈</a></li>
                             <li><a href="#">운동</a>
                                 <ul id="sub-menu">
-                                    <li><a href="#" aria-label="subemenu">오늘운동</a></li>
+                                    <li><a href="#" aria-label="subemenu">팔</a></li>
+                                    <li><a href="#" aria-label="subemenu">어깨</a></li>
+                                    <li><a href="#" aria-label="subemenu">하체</a></li>
                                     <li><a href="#" aria-label="subemenu">가슴</a></li>
                                     <li><a href="#" aria-label="subemenu">등</a></li>
-                                    <li><a href="#" aria-label="subemenu">어깨</a></li>
-                                    <li><a href="#" aria-label="subemenu">복부</a></li>
-                                    <li><a href="#" aria-label="subemenu">하체</a></li>
+                                    <li><a href="#" aria-label="subemenu">전신</a></li>
                                     <li><a href="#" aria-label="subemenu">유산소</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">식단</a>
                                 <ul id="sub-menu">
-                                    <li><a href="#" aria-label="subemenu">오늘식단</a></li>
-                                    <li><a href="#" aria-label="subemenu">건강</a></li>
+                                    <li><a href="#" aria-label="subemenu">일반식단</a></li>
+                                    <li><a href="#" aria-label="subemenu">다이어트</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">패션</a>
                                 <ul id="sub-menu">
-                                    <li><a href="#" aria-label="subemenu">남자</a></li>
-                                    <li><a href="#" aria-label="subemenu">여자</a></li>
-                                    <li><a href="#" aria-label="subemenu">운동용품</a></li>
+                                    <li><a href="#" aria-label="subemenu">남자 | ss</a></li>
+                                    <li><a href="#" aria-label="subemenu">남자 | fw</a></li>
+                                    <li><a href="#" aria-label="subemenu">여자 | ss</a></li>
+                                    <li><a href="#" aria-label="subemenu">여자 | fw</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">마일리지</a></li>
