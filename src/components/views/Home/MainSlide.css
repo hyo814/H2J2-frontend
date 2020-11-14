@@ -10,7 +10,7 @@
 
 #slider-wrap {
     position: relative;
-    width: 1002px;
+    width: 800px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -26,7 +26,7 @@
 #slider-wrap ul#slider li {
     float: left;
     position: relative;
-    width: 1002px;
+    width: 800px;
     height: 356px;
 }
 
@@ -43,7 +43,7 @@
 
 #slider-wrap ul#slider li img {
     display: block;
-    width: 1002px;
+    width: 800px;
     height: 356px;
 }
 
@@ -139,7 +139,7 @@
 }
 
 /* main_contents */
-#contents {width:1002px; margin:40px auto 16px; height:558px; background: #edf2ff no-repeat; border-radius: 10px / 10px;}
+#contents {width:800px; margin:40px auto 16px; height:558px; background: #edf2ff no-repeat; border-radius: 10px / 10px;}
 #contents h2 { text-align: left; margin:0 0 24px 0; font-size:18px; font-weight:600; color:#252525;}
 #contents h2 span {color:#bababa; padding:0 0 0 21px;}
 .section1 {position:relative; width:926px; margin:0 auto; padding:34px 0 10px 0; background: 0 100%  repeat-x;}
