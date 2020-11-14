@@ -59,7 +59,7 @@ class Mileage extends React.Component {
                     <DialogTitle id="alert-dialog-title" onClose={this.handleClose}>마일리지 안내</DialogTitle>
                     <DialogContent>
                         <Typography>
-                            {this.state.userid}님의 마일은 {this.state.mileage} 마일 입니다.
+                            {this.state.userid}님의 마일리지는 {this.state.mileage} 점입니다.
                         </Typography>
                     </DialogContent>
                     <DialogActions>
