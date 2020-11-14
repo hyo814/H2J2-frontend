@@ -7,6 +7,7 @@ import axios from "axios";
 import MyEdit from "./MyEdit";
 import MyDelete from "./MyDelete";
 import BodyInfo from "./BodyInfo";
+import Mileage from "../Login/Mileage";
 
 class MyPage extends Component {
     constructor(props) {
@@ -53,7 +54,8 @@ class MyPage extends Component {
                             <h1>My Page - HOME</h1>
                             <h3>당신과 함께 하는 피트니스 홈페이지 큐피트 ! </h3>
                             <U>
-                                <b>오늘도 큐피트 하세요 ~!</b>
+                                <b>오늘도 큐피트 하세요 ~!</b><br/>
+                                {this.state.userid}님의 마일리지가 궁금하신가요?{' '}<Mileage/>
                             </U>
                             <BodyInfo user={this.state.user}/><br/>
                             <p><MyEdit user={this.state.user}/>{' '}<MyDelete user={this.state.user}/></p>
