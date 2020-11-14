@@ -56,7 +56,6 @@ class Header extends Component {
                                     <li><a href="#" aria-label="subemenu">여자 | fw</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">마일리지</a></li>
                         </ul>
                     </nav>
                 </div>
