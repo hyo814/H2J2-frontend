@@ -79,7 +79,7 @@ class MyDelete extends Component {
                     <DialogContent>
                             <Input
                                 type='password'
-                                name='user_pwd'
+                                name='passwd'
                                 placeholder='패스워드'
                                 defaultValue={this.state.passwd}
                                 onInput={this.handleInput}
