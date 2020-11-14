@@ -17,7 +17,7 @@ class Mileage extends React.Component {
             level: cookie.load("level"),
             login: cookie.load("login"),
             mileage:'',
-    }
+        }
         const config = {
             headers: {Authorization: this.state.token}
         }
@@ -30,7 +30,8 @@ class Mileage extends React.Component {
                         mileage: response.data.mileage,
                     })
                 }
-                else {
+                //로그인이 계속 풀리는 문제가 생겨서 이렇게 처리 함
+                else if (!this.state.userid) {
                     alert("로그인 해주세요")
                     window.location.href="/login"
                 }
@@ -50,7 +51,6 @@ class Mileage extends React.Component {
             open: false
         })
     }
-
     render() {
         return (
             <span>
@@ -59,7 +59,7 @@ class Mileage extends React.Component {
                     <DialogTitle id="alert-dialog-title" onClose={this.handleClose}>마일리지 안내</DialogTitle>
                     <DialogContent>
                         <Typography>
-                            {this.state.userid}님의 마일리지는 {this.state.mileage} 점입니다.
+                            {this.state.userid}님의 마일은 {this.state.mileage} 마일 입니다.
                         </Typography>
                     </DialogContent>
                     <DialogActions>
