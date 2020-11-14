@@ -18,14 +18,20 @@ class Mileage extends Component {
     };
 
     handleClick = () => {
-        axios.get('http://h2j22020.vps.phps.kr:5000/api/mileage?userid=' + this.state.userid)
+        const config = {
+            headers: {Authorization: this.state.token}
+        }
+        axios.get('http://h2j22020.vps.phps.kr:5000/api/mileage?userid='+this.state.userid,config)
             .then(response => {
                 if (response.data.mileage){
                     console.log('response : ', JSON.stringify(response))
                 }
-                else {
-                    alert("로그인 해주세요!")
+                else if(!this.state.userid) {
+                    alert("로그인 해주세요")
                     window.location.href="/login"
+                }
+                else {
+                    alert("문의해주세요!")
                 }
             })
             .catch(e => {
