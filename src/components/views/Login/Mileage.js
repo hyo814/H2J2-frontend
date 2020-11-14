@@ -17,7 +17,6 @@ class Mileage extends React.Component {
             level: cookie.load("level"),
             login: cookie.load("login"),
             mileage:'',
-            mile: false,
     }
         const config = {
             headers: {Authorization: this.state.token}
@@ -28,9 +27,7 @@ class Mileage extends React.Component {
                 if (response.data.mileage) {
                     console.log('response : ', JSON.stringify(response))
                     this.setState({
-                        userid: response.data.userid,
                         mileage: response.data.mileage,
-                        mile:true
                     })
                 }
                 else {
@@ -41,10 +38,6 @@ class Mileage extends React.Component {
             .catch(e => {
                 console.log(e);
             })
-
-        this.setState({
-            mile: false
-        })
     }
 
     handleClickOpen = () => {
@@ -70,7 +63,6 @@ class Mileage extends React.Component {
                         </Typography>
                     </DialogContent>
                     <DialogActions>
-                        <Button outline color="primary" onClick={this.handleClose}>확인</Button>
                         <Button outline color="secondary" onClick={this.handleClose}>닫기</Button>
                     </DialogActions>
                 </Dialog>
