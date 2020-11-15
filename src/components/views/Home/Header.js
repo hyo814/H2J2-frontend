@@ -42,12 +42,7 @@ class Header extends Component {
                                     <li><a href="#" aria-label="subemenu">유산소</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">식단</a>
-                                <ul id="sub-menu">
-                                    <li><a href="#" aria-label="subemenu">일반식단</a></li>
-                                    <li><a href="#" aria-label="subemenu">다이어트</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="/food">건강식단</a></li>
                             <li><a href="#">패션</a>
                                 <ul id="sub-menu">
                                     <li><a href="#" aria-label="subemenu">남자 | ss</a></li>
