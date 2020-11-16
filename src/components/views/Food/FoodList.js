@@ -4,6 +4,7 @@ import Listpage from "./Listpage";
 import './style.css';
 import { withStyles } from '@material-ui/core/styles';
 import PaginationButton from '../../PaginationButton';
+import cookie from 'react-cookies'
 
 const styles = theme => ({
     root: {
@@ -31,7 +32,6 @@ class FoodList extends Component {
             completed: 0,
             loading: false,
             foods: [],
-            foods_image:[],
             page:0,
             currentPage: 1
         }
@@ -40,7 +40,6 @@ class FoodList extends Component {
     stateRefresh = (page) => {
         this.setState({
             foods: [],
-            foods_image:[],
             page: 0,
             completed: 0
         })
@@ -53,8 +52,7 @@ class FoodList extends Component {
                 this.setState({
                     loading: true,
                     foods: data[0].foods,
-                    foods_image:data[1].foods_image,
-                    page: data[2].page
+                    page: data[1].page
                 });
             })
             .catch(e => {
@@ -78,7 +76,7 @@ class FoodList extends Component {
         return (
             <>
                 <div>
-                    <Listpage Foods={this.state.foods} Imgs={this.state.foods_image} stateRefresh={this.stateRefresh} />
+                    <Listpage Foods={this.state.foods} stateRefresh={this.stateRefresh} />
                 </div>
                 <PaginationButton
                     page={this.state.page}

@@ -17,34 +17,27 @@ class Listpage extends Component {
         console.log("user_id: "+this.state.user_id)
     }
     render() {
-        const { Foods, Imgs } = this.props;
+        const { Foods } = this.props;
         return (
             <>
                 <h1>큐피트의 건강한 한끼 시작해볼까요?</h1>
                 <Table style={tablestyle} hover>
                     <thead>
-                        <tr>
-                            <th>음식</th>
-                            <th>탄수화물</th>
-                            <th>단백질</th>
-                            <th>지방</th>
-                            <th>칼로리</th>
-                            <th>URL</th>
-                        </tr>
+                    <tr>
+                        <th>음식</th>
+                        <th>탄수화물</th>
+                        <th>단백질</th>
+                        <th>지방</th>
+                        <th>칼로리</th>
+                        <th>URL</th>
+                    </tr>
                     </thead>
                     <tbody>
-                    {Imgs &&
-                    Imgs.map((img) => {
-                            return (
-                                <FoodCard
-                                    img_src={img.img_src}
-                                />
-                            );
-                        })}
                     {Foods &&
                     Foods.map((food) => {
                         return (
                             <FoodCard
+                                img_src={food.img_src}
                                 name={food.name}
                                 carbohydrate={food.carbohydrate}
                                 protein={food.protein}
