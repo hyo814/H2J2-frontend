@@ -21,8 +21,8 @@ class Listpage extends Component {
         return (
             <>
                 <h1>큐피트의 건강한 한끼 시작해볼까요?<br/></h1>
-                <h3>"하루 권장 섭취 칼로리 <b>2000kcal!</b><br/>
-                기준 <b>탄수화물 325g, 단백질 75g, 지방44g</b>가 적당한 수치라고 합니다."</h3>
+                <h5>"하루 권장 섭취 칼로리 <b>2000kcal!</b><br/>
+                기준 <b>탄수화물 325g, 단백질 75g, 지방44g</b>가 적당한 수치라고 합니다."</h5>
                 <Table style={tablestyle} hover>
                     <thead>
                     <tr>
