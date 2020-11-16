@@ -31,6 +31,7 @@ class FoodList extends Component {
         this.state = {
             completed: 0,
             loading: false,
+            diet:"퀴노아 영양밥",
             foods: [],
             page:0,
             currentPage: 1
@@ -54,6 +55,7 @@ class FoodList extends Component {
                     foods: data[0].foods,
                     page: data[1].page
                 });
+                alert(cookie.load("userid")+"님 오늘 한끼로는"+this.state.diet+"이 어떠하신가요?")
             })
             .catch(e => {
                 console.error(e);
