@@ -17,7 +17,7 @@ class Listpage extends Component {
         console.log("user_id: "+this.state.user_id)
     }
     render() {
-        const { Foods } = this.props;
+        const { Foods, Imgs } = this.props;
         return (
             <>
                 <h1>큐피트의 건강한 한끼 시작해볼까요?</h1>
@@ -33,21 +33,28 @@ class Listpage extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                    {Foods &&
-                        Foods.map((food) => {
+                    {Imgs &&
+                    Imgs.map((img) => {
                             return (
                                 <FoodCard
-                                    img_src={food.img_src}
-                                    name={food.name}
-                                    carbohydrate={food.carbohydrate}
-                                    protein={food.protein}
-                                    fat={food.fat}
-                                    calorie={food.calorie}
-                                    url={food.url}
-                                    stateRefresh = {this.props.stateRefresh}
+                                    img_src={img.img_src}
                                 />
                             );
                         })}
+                    {Foods &&
+                    Foods.map((food) => {
+                        return (
+                            <FoodCard
+                                name={food.name}
+                                carbohydrate={food.carbohydrate}
+                                protein={food.protein}
+                                fat={food.fat}
+                                calorie={food.calorie}
+                                url={food.url}
+                                stateRefresh = {this.props.stateRefresh}
+                            />
+                        );
+                    })}
                     </tbody>
                 </Table>
             </>
