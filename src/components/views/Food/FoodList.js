@@ -55,7 +55,7 @@ class FoodList extends Component {
                     foods: data[0].foods,
                     page: data[1].page
                 });
-                alert(cookie.load("userid")+"님 오늘 한끼로는"+this.state.diet+"이 어떠하신가요?")
+                alert(cookie.load("userid")+"님 오늘 한끼로는 "+this.state.diet+"이 어떠하신가요?")
             })
             .catch(e => {
                 console.error(e);
