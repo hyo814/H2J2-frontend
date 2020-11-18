@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./Header.css";
 import cookie from 'react-cookies'
 import Logout from "../Login/Logout";
+import { FiChevronDown } from "react-icons/fi";
 
 class Header extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Header extends Component {
                 <button type="button" className="mobile-nav-toggle d-lg-none">
                 </button>
                 <div id="head-util">
-                        <ul id="login">
+                        <ul id="cupid">
                             {this.state.level !=="2" ? <a href="/mypage">마이페이지</a>:
                                 <a href="/customer">고객관리</a>}&nbsp;&nbsp;|&nbsp;&nbsp;
                             {this.state.login ? <Logout/> :
@@ -31,7 +32,7 @@ class Header extends Component {
                         <ul id="main-menu">
                             <h1 className="name"><a href="/">큐피트</a></h1>
                             <li><a href="/">홈</a></li>
-                            <li><a href="#">운동</a>
+                            <li><a href="#">운동&nbsp;<FiChevronDown/></a>
                                 <ul id="sub-menu">
                                     <li><a href="#" aria-label="subemenu">팔</a></li>
                                     <li><a href="#" aria-label="subemenu">어깨</a></li>
@@ -43,7 +44,7 @@ class Header extends Component {
                                 </ul>
                             </li>
                             <li><a href="/food">건강식단</a></li>
-                            <li><a href="#">패션</a>
+                            <li><a href="#">패션&nbsp;<FiChevronDown/></a>
                                 <ul id="sub-menu">
                                     <li><a href="#" aria-label="subemenu">남자 | ss</a></li>
                                     <li><a href="#" aria-label="subemenu">남자 | fw</a></li>
