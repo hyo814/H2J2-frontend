@@ -4,7 +4,6 @@ import {Link, withRouter} from "react-router-dom";
 import {Button, Form, FormGroup, Label, Input, Card} from 'reactstrap';
 import axios from "axios";
 import cookie from 'react-cookies'
-import "./login.css"
 
 class Login extends Component {
     constructor(props) {
@@ -78,7 +77,7 @@ class Login extends Component {
                 <Card body outline color="primary">
                 <h3>LOGIN</h3>
                 <h5>당신의 건강 지킴이 ! 큐피트 </h5>
-                <div id="login"><Form  inline onSubmit={this.handleClick}>
+                <div><Form  inline onSubmit={this.handleClick}>
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Input
                             type='text'
