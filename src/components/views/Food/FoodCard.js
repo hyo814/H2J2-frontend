@@ -16,7 +16,7 @@ class FoodCard extends React.Component {
         return (
             <tr>
                 <td style={tablestyle}>
-                    <img width='150' height='100' src={this.props.img_src} alt=""/><br/>
+                    <a href={this.props.url}><img width='200' height='100' src={this.props.img_src} alt=""/></a><br/>
                     {this.props.name}
                 </td>
                 <td style={tablestyle}>
@@ -30,9 +30,6 @@ class FoodCard extends React.Component {
                 </td>
                 <td style={tablestyle}>
                     {this.props.calorie}
-                </td>
-                <td style={tablestyle}>
-                    <a href={this.props.url}>▶</a>
                 </td>
             </tr>
         );

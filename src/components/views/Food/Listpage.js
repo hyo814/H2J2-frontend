@@ -31,7 +31,6 @@ class Listpage extends Component {
                         <th>단백질</th>
                         <th>지방</th>
                         <th>칼로리</th>
-                        <th>URL</th>
                     </tr>
                     </thead>
                     <tbody>
