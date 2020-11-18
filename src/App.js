@@ -9,6 +9,7 @@ import MainSlide from "./components/views/Home/MainSlide";
 import MyPage from "./components/views/MyPage/MyPage";
 import CustomerDetail from "./components/views/Customer/CustomerDetail";
 import FoodList from "./components/views/Food/FoodList";
+import FassionList from "./components/views/Fassion/FassionList";
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                             <Route path="/mypage" component={MyPage}/>
                             <Route path="/customer" component={CustomerDetail}/>
                             <Route path="/food" component={FoodList}/>
+                            <Route path="/fassion" component={FassionList}/>
                         </Switch>
                     </ScrollToTop>
                 </div>
