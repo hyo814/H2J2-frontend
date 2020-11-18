@@ -9,7 +9,10 @@ import MainSlide from "./components/views/Home/MainSlide";
 import MyPage from "./components/views/MyPage/MyPage";
 import CustomerDetail from "./components/views/Customer/CustomerDetail";
 import FoodList from "./components/views/Food/FoodList";
-import FassionList from "./components/views/Fassion/FassionList";
+import WSSList from "./components/views/Fassion/WomenSS/WSSList";
+import WFWList from "./components/views/Fassion/WomenFW/WFWList";
+import MSSList from "./components/views/Fassion/MenSS/MSSList";
+import MFWList from "./components/views/Fassion/MenFW/MFWList";
 
 const App = () => {
     return (
@@ -25,7 +28,10 @@ const App = () => {
                             <Route path="/mypage" component={MyPage}/>
                             <Route path="/customer" component={CustomerDetail}/>
                             <Route path="/food" component={FoodList}/>
-                            <Route path="/fassion" component={FassionList}/>
+                            <Route exact path="/women_ss" component={WSSList}/>
+                            <Route exact path="/women_fw" component={WFWList}/>
+                            <Route exact path="/men_ss" component={MSSList}/>
+                            <Route exact path="/men_fw" component={MFWList}/>
                         </Switch>
                     </ScrollToTop>
                 </div>

@@ -46,10 +46,10 @@ class Header extends Component {
                             <li><a href="/food">건강식단</a></li>
                             <li><a href="#">패션&nbsp;<FiChevronDown/></a>
                                 <ul id="sub-menu">
-                                    <li><a href="#" aria-label="subemenu">남자 | ss</a></li>
-                                    <li><a href="#" aria-label="subemenu">남자 | fw</a></li>
-                                    <li><a href="#" aria-label="subemenu">여자 | ss</a></li>
-                                    <li><a href="#" aria-label="subemenu">여자 | fw</a></li>
+                                    <li><a href="men_ss" aria-label="subemenu">남자 | ss</a></li>
+                                    <li><a href="men_fw" aria-label="subemenu">남자 | fw</a></li>
+                                    <li><a href="women_ss" aria-label="subemenu">여자 | ss</a></li>
+                                    <li><a href="women_fw" aria-label="subemenu">여자 | fw</a></li>
                                 </ul>
                             </li>
                         </ul>
