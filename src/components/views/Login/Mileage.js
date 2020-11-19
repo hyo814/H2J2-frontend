@@ -30,7 +30,6 @@ class Mileage extends React.Component {
                         mileage: response.data.mileage,
                     })
                 }
-                //로그인이 계속 풀리는 문제가 생겨서 이렇게 처리 함
                 else if (!this.state.userid) {
                     alert("로그인 해주세요")
                     window.location.href="/login"
