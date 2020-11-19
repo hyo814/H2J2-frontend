@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import cookie from "react-cookies";
 import { Container, Row, Col } from 'reactstrap';
 
-class WSSpage extends Component {
+class WFWpage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,4 +35,4 @@ class WSSpage extends Component {
     }
 }
 
-export default WSSpage
+export default WFWpage

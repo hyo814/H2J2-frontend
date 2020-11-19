@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import WSSpage from "./WSSpage";
+import MFWpage from "./MFWpage";
 import './style.css';
 import { withStyles } from '@material-ui/core/styles';
 import PaginationButton from '../../../PaginationButton';
@@ -25,14 +25,14 @@ const styles = theme => ({
     }
 });
 
-class WSSList extends Component {
+class MFWList extends Component {
     constructor(props){
         super(props);
         this.state = {
             completed: 0,
             loading: false,
             clothes: [],
-            cloth:" 리앙 소프트 숏슬리브 웜블랙",
+            cloth:"남성 칠리 아이스 집업티",
             page:0,
             currentPage: 1
         }
@@ -48,7 +48,7 @@ class WSSList extends Component {
     }
 
     loadClothes = async (page) => {
-        await axios.get('http://h2j22020.vps.phps.kr:5000/api/fassion/women/ss?page='+page)
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/fassion/men/fw?page='+page)
             .then(({ data }) => {
                 this.setState({
                     loading: true,
@@ -78,7 +78,7 @@ class WSSList extends Component {
         return (
             <>
                 <div>
-                    <WSSpage Clothes={this.state.clothes} stateRefresh={this.stateRefresh} />
+                    <MFWpage Clothes={this.state.clothes} stateRefresh={this.stateRefresh} />
                 </div>
                 <PaginationButton
                     page={this.state.page}
@@ -91,4 +91,4 @@ class WSSList extends Component {
     }
 }
 
-export default withStyles(styles)(WSSList)
+export default withStyles(styles)(MFWList)
