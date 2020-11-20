@@ -13,7 +13,6 @@ import WSSList from "./components/views/Fassion/WomenSS/WSSList";
 import WFWList from "./components/views/Fassion/WomenFW/WFWList";
 import MSSList from "./components/views/Fassion/MenSS/MSSList";
 import MFWList from "./components/views/Fassion/MenFW/MFWList";
-import ExerciseList from "./components/views/Exercise/ExerciseList";
 
 const App = () => {
     return (
@@ -33,7 +32,6 @@ const App = () => {
                             <Route exact path="/women_fw" component={WFWList}/>
                             <Route exact path="/men_ss" component={MSSList}/>
                             <Route exact path="/men_fw" component={MFWList}/>
-                            <Route exact path="/exercise" component={ExerciseList}/>
                         </Switch>
                     </ScrollToTop>
                 </div>
