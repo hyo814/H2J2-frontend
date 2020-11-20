@@ -723,7 +723,7 @@ utils.toDashed = function( str ) {
 
 var console = window.console;
 /**
- * allow user to initialize classes via [data-namespace] or .js-namespace class
+ * allow user to initialize classes via [data-namespace] or CadioPlay.js-namespace class
  * htmlInit( Widget, 'widgetName' )
  * options are parsed from data-namespace-options
  */
@@ -732,7 +732,7 @@ utils.htmlInit = function( WidgetClass, namespace ) {
     var dashedNamespace = utils.toDashed( namespace );
     var dataAttr = 'data-' + dashedNamespace;
     var dataAttrElems = document.querySelectorAll( '[' + dataAttr + ']' );
-    var jsDashElems = document.querySelectorAll( '.js-' + dashedNamespace );
+    var jsDashElems = document.querySelectorAll( 'CadioPlay.js-' + dashedNamespace );
     var elems = utils.makeArray( dataAttrElems )
       .concat( utils.makeArray( jsDashElems ) );
     var dataOptionsAttr = dataAttr + '-options';

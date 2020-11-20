@@ -58,13 +58,13 @@ Put the required stylesheet at the [top](https://developer.yahoo.com/performance
 Put the script at the [bottom](https://developer.yahoo.com/performance/rules.html#js_bottom) of your markup right after jQuery:
 
 ```html
-<script src="/node_modules/jquery/dist/jquery.js"></script>
-<script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/node_modules/jquery/dist/jqueryCadioPlay.js"></script>
+<script src="/node_modules/owl.carousel/dist/owl.carousel.minCadioPlay.js"></script>
 ```
 
 ```html
-<script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/bower_components/jquery/dist/jqueryCadioPlay.js"></script>
+<script src="/bower_components/owl.carousel/dist/owl.carousel.minCadioPlay.js"></script>
 ```
 
 ### Usage
@@ -106,7 +106,7 @@ This package comes with [Grunt](http://gruntjs.com/) and [Bower](http://bower.io
   * `watch` watches source files and builds them automatically whenever you save.
   * `test` runs [JSHint](http://www.jshint.com/) and [QUnit](http://qunitjs.com/) tests headlessly in [PhantomJS](http://phantomjs.org/).
 
-To define which plugins are build into the distribution just edit `/_config.json` to fit your needs.
+To define which plugins are build into the distribution just edit `/_configCadioPlay.json` to fit your needs.
 
 ## Contributing
 
