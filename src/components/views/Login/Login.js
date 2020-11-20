@@ -4,6 +4,7 @@ import {Link, withRouter} from "react-router-dom";
 import {Button, Form, FormGroup, Label, Input, Card} from 'reactstrap';
 import axios from "axios";
 import cookie from 'react-cookies'
+import "./login.css"
 
 class Login extends Component {
     constructor(props) {
@@ -75,37 +76,38 @@ class Login extends Component {
         return (
             <Div>
                 <Card body outline color="primary">
-                <h3>LOGIN</h3>
-                <h5>당신의 건강 지킴이 ! 큐피트 </h5>
-                <div><Form  inline onSubmit={this.handleClick}>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                        <Input
-                            type='text'
-                            name='userid'
-                            placeholder='아이디'
-                            defaultValue={this.state.userid}
-                            onInput={this.handleInput}
-                        />
-                    </FormGroup>
-                </Form></div>
-                <Form inline onSubmit={this.handleClick}>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                        <Input
-                            type='password'
-                            name='passwd'
-                            placeholder='패스워드'
-                            defaultValue={this.state.passwd}
-                            onInput={this.handleInput}
-                        />
-                    </FormGroup>
-                </Form>
-                <Form inline onSubmit={this.handleClick}>
-                    <Button outline color="primary" type='submit'>로그인</Button>
-                    <Link to="./register">
-                        <Button outline color="primary">회원가입</Button>
-                    </Link>
-                </Form><br/>
-                <h6>비밀번호 분실 시, 운영진에게 문의 해주세요! </h6>
+                    <h3>LOGIN</h3>
+                    <h5>당신의 건강 지킴이 ! 큐피트 </h5>
+                    <div id="start">
+                        <Form inline onSubmit={this.handleClick}>
+                            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                                <Input
+                                    type='text'
+                                    name='userid'
+                                    placeholder='아이디'
+                                    defaultValue={this.state.userid}
+                                    onInput={this.handleInput}
+                                />
+                            </FormGroup>
+                        </Form>
+                        <Form inline onSubmit={this.handleClick}>
+                            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                                <Input
+                                    type='password'
+                                    name='passwd'
+                                    placeholder='패스워드'
+                                    defaultValue={this.state.passwd}
+                                    onInput={this.handleInput}
+                                />
+                            </FormGroup>
+                        </Form>
+                        <Form inline onSubmit={this.handleClick}>
+                            &nbsp;&nbsp;&nbsp;<Button outline color="primary" type='submit'>로그인</Button>
+                            &nbsp;<Link to="./register">
+                                <Button outline color="primary">회원가입</Button>
+                            </Link>
+                        </Form></div>
+                        <h6>비밀번호 분실 시, 운영진에게 문의 해주세요! </h6>
                 </Card>
             </Div>
         );
@@ -116,5 +118,4 @@ const Div = styled.div`
     width: 50%;
     margin: 5% auto;
     `;
-
 export default withRouter(Login);
