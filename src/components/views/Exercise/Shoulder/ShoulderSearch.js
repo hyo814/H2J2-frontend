@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Shoulderpage from "./Shoulderpage";
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -8,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import DialogContent from "@material-ui/core/DialogContent";
+import ShoulderResult from "./ShoulderResult";
 import "./shoulder.css"
 
 const styles = theme => ({
@@ -23,7 +23,7 @@ class ShoulderSearch extends Component {
             videos: [],
             search_place:'',
             search_open:false,
-            search_shoulders: []
+            search_Videos: []
         }
     }
 
@@ -88,7 +88,7 @@ class ShoulderSearch extends Component {
                 </div>
                 <Dialog open={this.state.search_open} onClose={this.handleClose}>
                     <DialogContent>
-                        <Shoulderpage Viedos={this.state.videos}/>
+                        <ShoulderResult Videos={this.state.videos}/>
                     </DialogContent>
                     <DialogActions>
                         <Button variant="outlined" color="primary" onClick={this.handleClose}>닫기</Button>

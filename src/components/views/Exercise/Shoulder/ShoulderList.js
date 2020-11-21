@@ -1,16 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
-import Shoulderpage from "./Shoulderpage";
+import ShoulderPage from "./ShoulderPage";
 import './shoulder.css';
-import {withStyles} from '@material-ui/core/styles';
-import ShoulderScroll from "./ShoulderScroll";
-import styled from 'styled-components';
-import ShoulderSearch from "./ShoulderSearch"
+import { withStyles } from '@material-ui/core/styles';
+import PaginationButton from "../../../PaginationButton"
+import ArmSearch from "./ShoulderSearch";
 import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
-        width: "50%",
+        width: "100%",
         minWidth: 1080
     },
     paper: {
@@ -28,30 +27,34 @@ const styles = theme => ({
 });
 
 class ShoulderList extends Component {
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = {
+            completed: 0,
             loading: false,
-            videos: []
+            exercises: [],
+            page:0,
+            currentPage: 1
         }
         this.stateRefresh = this.stateRefresh.bind(this);
     }
-
-    stateRefresh = () => {
+    stateRefresh = (page) => {
         this.setState({
-            videos: []
+            exercises: [],
+            page: 0,
+            completed: 0
         })
-        this.loadShoulder();
+        this.loadVideo(page);
     }
 
-    loadShoulder = async () => {
-        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/shoulder')
-            .then(({data}) => {
+    loadVideo = async (page) => {
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/shoulder?page='+page)
+            .then(({ data }) => {
                 this.setState({
                     loading: true,
-                    videos: data
+                    exercises: data[0].exercises,
+                    page: data[1].page
                 });
-                console.log(this.state)
             })
             .catch(e => {
                 console.error(e);
@@ -62,23 +65,30 @@ class ShoulderList extends Component {
     };
 
     componentDidMount() {
-        this.loadShoulder();
+        this.loadVideo(1);
+    }
+
+    pageHandler = page => {
+        this.setState({ currentPage: page });
+        this.stateRefresh(page)
     }
 
     render() {
         return (
-                <>
-                    <ShoulderSearch id="search" Videos={this.state.videos}/>
-                    <Div><Shoulderpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <ShoulderScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
-                </>
+            <>
+                <div>
+                    <ShoulderPage Exercises={this.state.exercises} stateRefresh={this.stateRefresh} />
+                </div>
+                <ArmSearch/><CheckCam/>
+                <PaginationButton
+                    page={this.state.page}
+                    onClick={this.pageHandler}
+                    currentPage={this.state.currentPage}
+                    stateRefresh={this.stateRefresh}
+                />
+            </>
         );
     }
 }
-
-const Div = styled.div`
-    width: 50%;
-    margin-left: 15%;
-`;
 
 export default withStyles(styles)(ShoulderList)
