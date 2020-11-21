@@ -1,41 +1,44 @@
-import React, { Component } from "react";
-import { Table } from "reactstrap";
+import React, {Component} from "react";
+import {Table} from "reactstrap";
 import cookie from "react-cookies";
-import BellyPlay from "./BellyPlay";
+import BellyCard from "./BellyCard";
 
 const tablestyle = {
     width: "56%",
     margin: "2% auto"
 }
 
-class Bellypage extends Component {
+class BellyPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userid:cookie.load('userid'),
+            user_id: cookie.load('user_id'),
         }
-        console.log("user_id: "+this.state.userid)
+        console.log("user_id: " + this.state.user_id)
     }
+
     render() {
-        const { Videos } = this.props;
+        const {Exercises} = this.props;
         return (
             <>
-                <p><h1>큐피트의 건강한 운동을 시작해볼까요?<br/></h1></p>
+                <p><h1>큐피트의 건강한 운동 같이 시작해볼까요?<br/></h1></p>
                 <Table style={tablestyle} hover>
                     <thead>
                     <tr>
-                        <th>운동 동영상</th>
+                        <th>동영상</th>
+                        <th>이름</th>
+                        <th>자세</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {Videos &&
-                    Videos.map((video) => {
+                    {Exercises &&
+                    Exercises.map((exercise) => {
                         return (
-                            <BellyPlay
-                                ex_video={video.ex_video}
-                                id={video.id}
-                                name={video.name}
-                                stateRefresh = {this.props.stateRefresh}
+                            <BellyCard
+                                ex_video={exercise.ex_video}
+                                id={exercise.id}
+                                name={exercise.name}
+                                stateRefresh={this.props.stateRefresh}
                             />
                         );
                     })}
@@ -46,4 +49,4 @@ class Bellypage extends Component {
     }
 }
 
-export default Bellypage;
+export default BellyPage;

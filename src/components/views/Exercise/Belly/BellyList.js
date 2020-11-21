@@ -1,16 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
-import Bellypage from "./Bellypage";
+import BellyPage from "./BellyPage";
 import './belly.css';
-import {withStyles} from '@material-ui/core/styles';
-import BellyScroll from "./BellyScroll";
-import styled from 'styled-components';
-import BellySearch from "./BellySearch";
+import { withStyles } from '@material-ui/core/styles';
+import PaginationButton from "../../../PaginationButton"
+import ArmSearch from "./BellySearch";
 import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
-        width: "50%",
+        width: "100%",
         minWidth: 1080
     },
     paper: {
@@ -28,30 +27,34 @@ const styles = theme => ({
 });
 
 class BellyList extends Component {
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = {
+            completed: 0,
             loading: false,
-            videos: []
+            exercises: [],
+            page:0,
+            currentPage: 1
         }
         this.stateRefresh = this.stateRefresh.bind(this);
     }
-
-    stateRefresh = () => {
+    stateRefresh = (page) => {
         this.setState({
-            videos: []
+            exercises: [],
+            page: 0,
+            completed: 0
         })
-        this.loadBelly();
+        this.loadVideo(page);
     }
 
-    loadBelly = async () => {
-        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/belly')
-            .then(({data}) => {
+    loadVideo = async (page) => {
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/belly?page='+page)
+            .then(({ data }) => {
                 this.setState({
                     loading: true,
-                    videos: data
+                    exercises: data[0].exercises,
+                    page: data[1].page
                 });
-                console.log(this.state)
             })
             .catch(e => {
                 console.error(e);
@@ -62,23 +65,30 @@ class BellyList extends Component {
     };
 
     componentDidMount() {
-        this.loadBelly();
+        this.loadVideo(1);
+    }
+
+    pageHandler = page => {
+        this.setState({ currentPage: page });
+        this.stateRefresh(page)
     }
 
     render() {
         return (
-                <>
-                    <BellySearch id="search" Videos={this.state.videos}/>
-                    <Div><Bellypage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <BellyScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
-                </>
+            <>
+                <div>
+                    <BellyPage Exercises={this.state.exercises} stateRefresh={this.stateRefresh} />
+                </div>
+                <ArmSearch/><CheckCam/>
+                <PaginationButton
+                    page={this.state.page}
+                    onClick={this.pageHandler}
+                    currentPage={this.state.currentPage}
+                    stateRefresh={this.stateRefresh}
+                />
+            </>
         );
     }
 }
-
-const Div = styled.div`
-    width: 50%;
-    margin-left: 15%;
-`;
 
 export default withStyles(styles)(BellyList)

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Bellypage from "./Bellypage";
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -8,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import DialogContent from "@material-ui/core/DialogContent";
+import BackResult from "./BellyResult";
 import "./belly.css"
 
 const styles = theme => ({
@@ -23,7 +23,7 @@ class BellySearch extends Component {
             videos: [],
             search_place:'',
             search_open:false,
-            search_Bellys: []
+            search_Videos: []
         }
     }
 
@@ -88,7 +88,7 @@ class BellySearch extends Component {
                 </div>
                 <Dialog open={this.state.search_open} onClose={this.handleClose}>
                     <DialogContent>
-                        <Bellypage Viedos={this.state.videos}/>
+                        <BackResult Videos={this.state.videos}/>
                     </DialogContent>
                     <DialogActions>
                         <Button variant="outlined" color="primary" onClick={this.handleClose}>닫기</Button>
