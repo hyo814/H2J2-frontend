@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Wholepage from "./Wholepage";
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -8,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import DialogContent from "@material-ui/core/DialogContent";
+import WholeResult from "./WholeResult";
 import "./whole.css"
 
 const styles = theme => ({
@@ -23,7 +23,7 @@ class WholeSearch extends Component {
             videos: [],
             search_place:'',
             search_open:false,
-            search_wholes: []
+            search_Videos: []
         }
     }
 
@@ -88,7 +88,7 @@ class WholeSearch extends Component {
                 </div>
                 <Dialog open={this.state.search_open} onClose={this.handleClose}>
                     <DialogContent>
-                        <Wholepage Viedos={this.state.videos}/>
+                        <WholeResult Videos={this.state.videos}/>
                     </DialogContent>
                     <DialogActions>
                         <Button variant="outlined" color="primary" onClick={this.handleClose}>닫기</Button>
