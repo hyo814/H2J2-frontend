@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Chestpage from "./Chestpage";
-import './chest.css';
+import Shoulderpage from "./Shoulderpage";
+import './shoulder.css';
 import {withStyles} from '@material-ui/core/styles';
-import ChestScroll from "./ChestScroll";
+import ShoulderScroll from "./ShoulderScroll";
 import styled from 'styled-components';
-import ChestSearch from "./ChestSearch"
+import ShoulderSearch from "./ShoulderSearch"
 
 const styles = theme => ({
     root: {
@@ -26,7 +26,7 @@ const styles = theme => ({
     }
 });
 
-class ChestList extends Component {
+class ShoulderList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,11 +40,11 @@ class ChestList extends Component {
         this.setState({
             videos: []
         })
-        this.loadChest();
+        this.loadShoulder();
     }
 
-    loadChest = async () => {
-        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/chest')
+    loadShoulder = async () => {
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/shoulder')
             .then(({data}) => {
                 this.setState({
                     loading: true,
@@ -61,15 +61,15 @@ class ChestList extends Component {
     };
 
     componentDidMount() {
-        this.loadChest();
+        this.loadShoulder();
     }
 
     render() {
         return (
                 <>
-                    <ChestSearch id="search" Videos={this.state.videos}/>
-                    <Div><Chestpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <ChestScroll id="scroll" Videos={this.state.videos}/>
+                    <ShoulderSearch id="search" Videos={this.state.videos}/>
+                    <Div><Shoulderpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
+                    <ShoulderScroll id="scroll" Videos={this.state.videos}/>
                 </>
         );
     }
@@ -80,4 +80,4 @@ const Div = styled.div`
     margin-left: 15%;
 `;
 
-export default withStyles(styles)(ChestList)
+export default withStyles(styles)(ShoulderList)

@@ -1,11 +1,12 @@
 import React from "react";
 import cookie from "react-cookies";
 
+
 const tablestyle = {
     lineHeight: "20px"
 }
 
-class ChestCard extends React.Component {
+class WholeCard extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -25,4 +26,4 @@ class ChestCard extends React.Component {
         );
     }
 }
-export default ChestCard;
+export default WholeCard;

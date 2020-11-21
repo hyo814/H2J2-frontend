@@ -2,12 +2,11 @@ import React from "react";
 import cookie from "react-cookies";
 import ReactPlayer from "react-player";
 
-
 const tablestyle = {
     lineHeight: "20px"
 }
 
-class ChestPlay extends React.Component {
+class LowerPlay extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -29,4 +28,4 @@ class ChestPlay extends React.Component {
     }
 }
 
-export default ChestPlay;
+export default LowerPlay;

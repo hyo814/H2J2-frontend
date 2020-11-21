@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Chestpage from "./Chestpage";
+import Wholepage from "./Wholepage";
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -8,12 +8,12 @@ import Button from "@material-ui/core/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import DialogContent from "@material-ui/core/DialogContent";
-import "./chest.css"
+import "./whole.css"
 
 const styles = theme => ({
 });
 
-class ChestSearch extends Component {
+class WholeSearch extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -23,12 +23,12 @@ class ChestSearch extends Component {
             videos: [],
             search_place:'',
             search_open:false,
-            search_Chests: []
+            search_wholes: []
         }
     }
 
     searchVideo = (title) => {
-        axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/chest/search?title='+title)
+        axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/whole_body/search?title='+title)
             .then(({ data }) => {
                 this.setState({
                     loading: true,
@@ -88,7 +88,7 @@ class ChestSearch extends Component {
                 </div>
                 <Dialog open={this.state.search_open} onClose={this.handleClose}>
                     <DialogContent>
-                        <Chestpage Viedos={this.state.videos}/>
+                        <Wholepage Viedos={this.state.videos}/>
                     </DialogContent>
                     <DialogActions>
                         <Button variant="outlined" color="primary" onClick={this.handleClose}>닫기</Button>
@@ -99,4 +99,4 @@ class ChestSearch extends Component {
     }
 }
 
-export default withStyles(styles)(ChestSearch)
+export default withStyles(styles)(WholeSearch)

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Chestpage from "./Chestpage";
-import './chest.css';
+import Lowerpage from "./Lowerpage";
+import './lower.css';
 import {withStyles} from '@material-ui/core/styles';
-import ChestScroll from "./ChestScroll";
+import LowerScroll from "./LowerScroll";
 import styled from 'styled-components';
-import ChestSearch from "./ChestSearch"
+import LowerSearch from "./LowerSearch";
 
 const styles = theme => ({
     root: {
@@ -26,7 +26,7 @@ const styles = theme => ({
     }
 });
 
-class ChestList extends Component {
+class LowerList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,11 +40,11 @@ class ChestList extends Component {
         this.setState({
             videos: []
         })
-        this.loadChest();
+        this.loadWhole();
     }
 
-    loadChest = async () => {
-        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/chest')
+    loadWhole = async () => {
+        await axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/lower_body')
             .then(({data}) => {
                 this.setState({
                     loading: true,
@@ -61,15 +61,15 @@ class ChestList extends Component {
     };
 
     componentDidMount() {
-        this.loadChest();
+        this.loadWhole();
     }
 
     render() {
         return (
                 <>
-                    <ChestSearch id="search" Videos={this.state.videos}/>
-                    <Div><Chestpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <ChestScroll id="scroll" Videos={this.state.videos}/>
+                    <LowerSearch id="search" Videos={this.state.videos}/>
+                    <Div><Lowerpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
+                    <LowerScroll id="scroll" Videos={this.state.videos}/>
                 </>
         );
     }
@@ -80,4 +80,4 @@ const Div = styled.div`
     margin-left: 15%;
 `;
 
-export default withStyles(styles)(ChestList)
+export default withStyles(styles)(LowerList)

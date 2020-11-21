@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 import cookie from "react-cookies";
-import ChestPlay from "./ChestPlay";
+import ShoulderPlay from "./ShoulderPlay";
 
 const tablestyle = {
     width: "56%",
     margin: "2% auto"
 }
 
-class Chestpage extends Component {
+class Shoulderpage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +31,7 @@ class Chestpage extends Component {
                     {Videos &&
                     Videos.map((video) => {
                         return (
-                            <ChestPlay
+                            <ShoulderPlay
                                 ex_video={video.ex_video}
                                 id={video.id}
                                 name={video.name}
@@ -46,4 +46,4 @@ class Chestpage extends Component {
     }
 }
 
-export default Chestpage;
+export default Shoulderpage;

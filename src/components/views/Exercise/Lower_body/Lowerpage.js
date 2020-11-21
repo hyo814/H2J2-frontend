@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 import cookie from "react-cookies";
-import ChestPlay from "./ChestPlay";
+import LowerPlay from "./LowerPlay";
 
 const tablestyle = {
     width: "56%",
     margin: "2% auto"
 }
 
-class Chestpage extends Component {
+class Lowerpage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +31,7 @@ class Chestpage extends Component {
                     {Videos &&
                     Videos.map((video) => {
                         return (
-                            <ChestPlay
+                            <LowerPlay
                                 ex_video={video.ex_video}
                                 id={video.id}
                                 name={video.name}
@@ -46,4 +46,4 @@ class Chestpage extends Component {
     }
 }
 
-export default Chestpage;
+export default Lowerpage;

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import "./chest.css"
-import ChestCard from "./ChestCard";
+import "./lower.css"
+import LowerCard from "./LowerCard";
 import {Table} from "reactstrap";
 import CheckCam from "../CheckCam";
 
 
-class ChestScroll extends Component {
+class LowerScroll extends Component {
     scrollToChange = (param) => {
         const {scrollHeight, clientHeight} = this.box;
         if (param === 'd') {
@@ -19,7 +19,7 @@ class ChestScroll extends Component {
         const {Videos} = this.props;
         const style = {
             border: '1px solid black'
-            ,top:'-900px'
+            ,top:'-1600px'
             , height: '200px'
             , width: '300px'
             , overflow: 'auto'
@@ -49,7 +49,7 @@ class ChestScroll extends Component {
                     {Videos &&
                     Videos.map((video) => {
                         return (
-                            <ChestCard
+                            <LowerCard
                                 ex_video={video.ex_video}
                                 id={video.id}
                                 name={video.name}
@@ -67,4 +67,4 @@ class ChestScroll extends Component {
     }
 }
 
-export default ChestScroll;
+export default LowerScroll;
