@@ -1,41 +1,44 @@
-import React, { Component } from "react";
-import { Table } from "reactstrap";
+import React, {Component} from "react";
+import {Table} from "reactstrap";
 import cookie from "react-cookies";
-import LowerPlay from "./LowerPlay";
+import LowerCard from "./LowerCard";
 
 const tablestyle = {
     width: "56%",
     margin: "2% auto"
 }
 
-class Lowerpage extends Component {
+class LowerPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userid:cookie.load('userid'),
+            user_id: cookie.load('user_id'),
         }
-        console.log("user_id: "+this.state.userid)
+        console.log("user_id: " + this.state.user_id)
     }
+
     render() {
-        const { Videos } = this.props;
+        const {Exercises} = this.props;
         return (
             <>
-                <p><h1>큐피트의 건강한 운동을 시작해볼까요?<br/></h1></p>
+                <p><h1>큐피트의 건강한 운동 같이 시작해볼까요?<br/></h1></p>
                 <Table style={tablestyle} hover>
                     <thead>
                     <tr>
-                        <th>운동 동영상</th>
+                        <th>동영상</th>
+                        <th>이름</th>
+                        <th>자세</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {Videos &&
-                    Videos.map((video) => {
+                    {Exercises &&
+                    Exercises.map((exercise) => {
                         return (
-                            <LowerPlay
-                                ex_video={video.ex_video}
-                                id={video.id}
-                                name={video.name}
-                                stateRefresh = {this.props.stateRefresh}
+                            <LowerCard
+                                ex_video={exercise.ex_video}
+                                id={exercise.id}
+                                name={exercise.name}
+                                stateRefresh={this.props.stateRefresh}
                             />
                         );
                     })}
@@ -46,4 +49,4 @@ class Lowerpage extends Component {
     }
 }
 
-export default Lowerpage;
+export default LowerPage;
