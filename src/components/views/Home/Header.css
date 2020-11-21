@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    overflow-x: hidden;
+}
+header {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+}
+h1 {
+    margin: 0;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#head-util {
+    margin-top: 20px;
+    margin-right: 60px;
+    text-align: right;
+}
+
+#cupid {
+    margin-top: 1%;
+    margin-right: 20%;
+    text-align: right;
+    color: #5c7cfa ;
+}
+
+#head-util > ul > li> a {
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    font-family:'Do Hyeon', sans-serif;
+}
+#cupid > h1 > a {
+    text-decoration: none;
+    color: #4263eb ;
+}
+#main-menu > li {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    border-style: solid none;
+    border-width: 2px;
+    border-color: #ced4da;
+}
+
+#main-menu > li > a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: block;
+    padding: 14px 72px;
+    border-top: black;
+}
+
+#main-menu > h1 {
+    margin:  0 20px;
+    display: inline-block;
+}
+#main-menu > li:nth-child(1) > a {
+    border-left: 1px solid white;
+}
+#sub-menu {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    background: #182952;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.15s ease-in;
+    z-index: 10;
+}
+#sub-menu > li {
+    background-color: whitesmoke;
+    padding: 16px 50px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+#sub-menu > li >  a {
+    color: black;
+    text-decoration: none;
+}
+#main-menu :hover {
+    color: #4263eb ;
+}
+#main-menu > li:hover #sub-menu {
+    opacity: 1;
+    visibility: visible!important;
+}
+#sub-menu > li >  a:hover {
+    color: #5c7cfa ;
+}
