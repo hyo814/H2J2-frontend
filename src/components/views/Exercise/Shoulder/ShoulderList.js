@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 import ShoulderScroll from "./ShoulderScroll";
 import styled from 'styled-components';
 import ShoulderSearch from "./ShoulderSearch"
+import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
@@ -69,7 +70,7 @@ class ShoulderList extends Component {
                 <>
                     <ShoulderSearch id="search" Videos={this.state.videos}/>
                     <Div><Shoulderpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <ShoulderScroll id="scroll" Videos={this.state.videos}/>
+                    <ShoulderScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
                 </>
         );
     }

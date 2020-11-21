@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import "./lower.css"
 import LowerCard from "./LowerCard";
 import {Table} from "reactstrap";
-import CheckCam from "../CheckCam";
 
 
 class LowerScroll extends Component {
@@ -19,7 +18,7 @@ class LowerScroll extends Component {
         const {Videos} = this.props;
         const style = {
             border: '1px solid black'
-            ,top:'-1600px'
+            ,top:'-1650px'
             , height: '200px'
             , width: '300px'
             , overflow: 'auto'
@@ -59,7 +58,6 @@ class LowerScroll extends Component {
                     })}
                     </tbody>
                 </Table>
-                <CheckCam/>
                 <div style={innerStyle}/>
             </div>
             </>

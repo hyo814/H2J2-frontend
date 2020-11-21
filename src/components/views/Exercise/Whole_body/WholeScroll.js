@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import "./whole.css"
 import WholeCard from "./WholeCard";
 import {Table} from "reactstrap";
-import CheckCam from "../CheckCam";
 
 
 class WholeScroll extends Component {
@@ -59,7 +58,6 @@ class WholeScroll extends Component {
                     })}
                     </tbody>
                 </Table>
-                <CheckCam/>
                 <div style={innerStyle}/>
             </div>
             </>

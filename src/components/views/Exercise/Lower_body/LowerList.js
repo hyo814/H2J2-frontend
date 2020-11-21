@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 import LowerScroll from "./LowerScroll";
 import styled from 'styled-components';
 import LowerSearch from "./LowerSearch";
+import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
@@ -69,7 +70,7 @@ class LowerList extends Component {
                 <>
                     <LowerSearch id="search" Videos={this.state.videos}/>
                     <Div><Lowerpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <LowerScroll id="scroll" Videos={this.state.videos}/>
+                    <LowerScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
                 </>
         );
     }

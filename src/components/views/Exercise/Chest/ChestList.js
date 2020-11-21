@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 import ChestScroll from "./ChestScroll";
 import styled from 'styled-components';
 import ChestSearch from "./ChestSearch"
+import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
@@ -70,6 +71,7 @@ class ChestList extends Component {
                     <ChestSearch id="search" Videos={this.state.videos}/>
                     <Div><Chestpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
                     <ChestScroll id="scroll" Videos={this.state.videos}/>
+                    <CheckCam/>
                 </>
         );
     }

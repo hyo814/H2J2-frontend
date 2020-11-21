@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 import WholeScroll from "./WholeScroll";
 import styled from 'styled-components';
 import WholeSearch from "./WholeSearch";
+import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
@@ -69,7 +70,7 @@ class WholeList extends Component {
                 <>
                     <WholeSearch id="search" Videos={this.state.videos}/>
                     <Div><Wholepage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <WholeScroll id="scroll" Videos={this.state.videos}/>
+                    <WholeScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
                 </>
         );
     }

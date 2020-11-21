@@ -48,11 +48,18 @@ class CheckCam extends Component {
 
     render() {
         return (
-            <>
+            <Div>
                 <Button outline color="primary" onClick={this.handleClick}>자세확인</Button>
-            </>
+            </Div>
         );
     }
 }
+const Div = styled.div`
+    position:absolute;
+    top:450px;
+    margin-left: 65%;
+    text-align: center;
+    color: #5c7cfa ;
+`;
 
 export default withRouter(CheckCam);

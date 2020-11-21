@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import "./shoulder.css"
 import ShoulderCard from "./ShoulderCard";
 import {Table} from "reactstrap";
-import CheckCam from "../CheckCam";
 
 
 class ShoulderScroll extends Component {
@@ -59,7 +58,6 @@ class ShoulderScroll extends Component {
                     })}
                     </tbody>
                 </Table>
-                <CheckCam/>
                 <div style={innerStyle}/>
             </div>
             </>

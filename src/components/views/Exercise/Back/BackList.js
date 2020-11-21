@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 import BackScroll from "./BackScroll";
 import styled from 'styled-components';
 import BackSearch from "./BackSearch";
+import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
@@ -69,7 +70,7 @@ class BackList extends Component {
                 <>
                     <BackSearch id="search" Videos={this.state.videos}/>
                     <Div><Backpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <BackScroll id="scroll" Videos={this.state.videos}/>
+                    <BackScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
                 </>
         );
     }

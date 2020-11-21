@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 import BellyScroll from "./BellyScroll";
 import styled from 'styled-components';
 import BellySearch from "./BellySearch";
+import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
@@ -69,7 +70,7 @@ class BellyList extends Component {
                 <>
                     <BellySearch id="search" Videos={this.state.videos}/>
                     <Div><Bellypage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <BellyScroll id="scroll" Videos={this.state.videos}/>
+                    <BellyScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
                 </>
         );
     }

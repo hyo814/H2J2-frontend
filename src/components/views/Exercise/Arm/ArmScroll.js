@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import "./arm.css"
 import {Table} from "reactstrap";
 import ArmCard from "./ArmCard";
-import {Check} from "@material-ui/icons";
-import CheckCam from "../CheckCam";
 
 
 class ArmScroll extends Component {
@@ -60,7 +58,6 @@ class ArmScroll extends Component {
                         })}
                         </tbody>
                     </Table>
-                    <CheckCam/>
                     <div style={innerStyle}/>
                 </div>
             </>

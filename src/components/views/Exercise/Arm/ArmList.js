@@ -6,6 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 import ArmScroll from "./ArmScroll";
 import styled from 'styled-components';
 import ArmSearch from "./ArmSearch";
+import CheckCam from "../CheckCam";
 
 const styles = theme => ({
     root: {
@@ -69,7 +70,7 @@ class ArmList extends Component {
                 <>
                         <ArmSearch id="search" Videos={this.state.videos}/>
                     <Div><Armpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                        <ArmScroll id="scroll" Videos={this.state.videos}/>
+                        <ArmScroll id="scroll" Videos={this.state.videos}/><CheckCam/>
                 </>
         );
     }
