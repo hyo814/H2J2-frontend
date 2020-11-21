@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./style.css"
+import "./back.css"
 import BackCard from "./BackCard";
 import {Table} from "reactstrap";
 

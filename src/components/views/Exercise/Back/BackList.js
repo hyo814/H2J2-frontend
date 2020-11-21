@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Backpage from "./Backpage";
-import './style.css';
+import './back.css';
 import {withStyles} from '@material-ui/core/styles';
 import BackScroll from "./BackScroll";
 import styled from 'styled-components';
-import ArmSearch from "./BackSearch";
 import BackSearch from "./BackSearch";
 
 const styles = theme => ({
