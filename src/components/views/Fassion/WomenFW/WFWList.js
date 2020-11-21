@@ -32,7 +32,6 @@ class WFWList extends Component {
             completed: 0,
             loading: false,
             clothes: [],
-            cloth:"여성 투 톤 테이프 탱크",
             page:0,
             currentPage: 1
         }
@@ -55,7 +54,6 @@ class WFWList extends Component {
                     clothes: data[0].clothes,
                     page: data[1].page
                 });
-                alert(cookie.load("userid")+"님 오늘 옷으로는 "+this.state.cloth+"가 어떠하신가요?")
             })
             .catch(e => {
                 console.error(e);
