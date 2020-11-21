@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.App {
+    font-family: 'Do Hyeon', sans-serif;
+    text-align: center;
+}
+.component--item_card {
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0;
+}
+.image--itemcard {
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+    border-right: 1px solid #ddd;
+}
+.name {
+    margin-left : 20px;
+    width:220px;
+    padding:0 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+
+}
+#price {
+    text-align: left;
+    margin-left : 25px;
+}
+
+.intro {
+    padding-bottom:30px;
+}
