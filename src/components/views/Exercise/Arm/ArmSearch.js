@@ -7,10 +7,10 @@ import Button from "@material-ui/core/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import DialogContent from "@material-ui/core/DialogContent";
-import Armpage from "./Armpage";
+import ArmResult from "./ArmResult";
+import "./arm.css"
 
 const styles = theme => ({
-
 });
 
 class ArmSearch extends Component {
@@ -28,7 +28,7 @@ class ArmSearch extends Component {
     }
 
     searchVideo = (title) => {
-        axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/arm/search/search?title='+title)
+        axios.get('http://h2j22020.vps.phps.kr:5000/api/exercise/arm/search?title='+title)
             .then(({ data }) => {
                 this.setState({
                     loading: true,
@@ -52,7 +52,7 @@ class ArmSearch extends Component {
 
     handleSubmit = (e) => {
         if(!this.state.search_place){
-            alert('제목을 입력해주세요')
+            alert('검색어를 입력해주세요')
             return
         }
         this.setState({
@@ -77,6 +77,7 @@ class ArmSearch extends Component {
             <>
                 <div id="search">
                     <input
+                        id="search"
                         placeholder="search"
                         value={this.state.search_place}
                         onChange={this.handleChange}
@@ -87,7 +88,7 @@ class ArmSearch extends Component {
                 </div>
                 <Dialog open={this.state.search_open} onClose={this.handleClose}>
                     <DialogContent>
-                        <Armpage Videos={this.state.videos}/>
+                        <ArmResult Videos={this.state.videos}/>
                     </DialogContent>
                     <DialogActions>
                         <Button variant="outlined" color="primary" onClick={this.handleClose}>닫기</Button>
