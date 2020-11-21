@@ -1,11 +1,14 @@
 import React from "react";
 import cookie from "react-cookies";
+import ReactPlayer from "react-player";
+import ArmSearch from "./ChestSearch";
+import CheckCam from "../CheckCam";
 
 const tablestyle = {
     lineHeight: "20px"
 }
 
-class ChestCard extends React.Component {
+class ArmCard extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -16,13 +19,17 @@ class ChestCard extends React.Component {
         return (
             <tr>
                 <td style={tablestyle}>
-                    {this.props.id}
-                </td >
+                    <ReactPlayer width="500px" height="300px"
+                        url={this.props.ex_video}/>
+                </td>
                 <td style={tablestyle}>
-                   <a href={this.props.ex_video}  target="_blank" >{this.props.name}</a>
+                    {this.props.name}
+                </td>
+                <td style={tablestyle}>
+                    <CheckCam/>
                 </td>
             </tr>
         );
     }
 }
-export default ChestCard;
+export default ArmCard;

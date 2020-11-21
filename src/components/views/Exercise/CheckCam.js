@@ -17,21 +17,19 @@ class CheckCam extends Component {
     }
 
     handleClick = (e) => {
-        let url = 'http://h2j22020.vps.phps.kr:5000/api/exercise/camera';
-        const post = {
-            userid: this.state.userid,
-            token: this.state.token,
-            mileage: this.state.mileage
+        const config = {
+            headers: {Authorization: this.state.token}
         }
-        axios.post(url, post)
+        let url = 'http://h2j22020.vps.phps.kr:5000/api/exercise/camera?userid='+this.state.userid;
+        const post = {
+            userid:this.state.userid
+        }
+        axios.post(url, post,config)
             .then(response => {
-                if (response.data.camera === "True") {
-                    this.setState({
-                        token: response.data.token,
-                        userid: response.data.userid,
-                        mileage: response.data.mileage
-                    })
-                } else if (!response.data.camera) {
+                if (response.data.camera) {
+                    console.log('response : ', JSON.stringify(response))
+                    window.open("https://editor.p5js.org/dmdm2002/full/quS3Px3pW")
+                } else {
                     alert("다시 로그인 하세요")
                     window.location.href = '/login'
                 }
@@ -56,8 +54,8 @@ class CheckCam extends Component {
 }
 const Div = styled.div`
     position:absolute;
-    top:450px;
-    margin-left: 65%;
+    top:300px;
+    margin-left: 75%;
     text-align: center;
     color: #5c7cfa ;
 `;
