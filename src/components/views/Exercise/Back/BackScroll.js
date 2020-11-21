@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./back.css"
 import BackCard from "./BackCard";
 import {Table} from "reactstrap";
+import CheckCam from "../CheckCam";
 
 
 class BackScroll extends Component {
@@ -57,6 +58,7 @@ class BackScroll extends Component {
                     })}
                     </tbody>
                 </Table>
+                <CheckCam/>
                 <div style={innerStyle}/>
             </div>
             </>

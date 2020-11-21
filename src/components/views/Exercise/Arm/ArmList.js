@@ -67,9 +67,9 @@ class ArmList extends Component {
     render() {
         return (
                 <>
-                    <ArmSearch id="search" Videos={this.state.videos}/>
+                        <ArmSearch id="search" Videos={this.state.videos}/>
                     <Div><Armpage Videos={this.state.videos} stateRefresh={this.stateRefresh}/></Div>
-                    <ArmScroll id="scroll" Videos={this.state.videos}/>
+                        <ArmScroll id="scroll" Videos={this.state.videos}/>
                 </>
         );
     }

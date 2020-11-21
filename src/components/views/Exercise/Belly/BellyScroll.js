@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./belly.css"
 import BellyCard from "./BellyCard";
 import {Table} from "reactstrap";
+import CheckCam from "../CheckCam";
 
 
 class BellyScroll extends Component {
@@ -58,6 +59,7 @@ class BellyScroll extends Component {
                     })}
                     </tbody>
                 </Table>
+                <CheckCam/>
                 <div style={innerStyle}/>
             </div>
             </>

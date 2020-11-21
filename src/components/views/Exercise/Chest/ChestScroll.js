@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./chest.css"
 import ChestCard from "./ChestCard";
 import {Table} from "reactstrap";
+import CheckCam from "../CheckCam";
 
 
 class ChestScroll extends Component {
@@ -58,6 +59,7 @@ class ChestScroll extends Component {
                     })}
                     </tbody>
                 </Table>
+                <CheckCam/>
                 <div style={innerStyle}/>
             </div>
             </>
