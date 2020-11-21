@@ -16,6 +16,10 @@ import MFWList from "./components/views/Fassion/MenFW/MFWList";
 import ArmList from "./components/views/Exercise/Arm/ArmList";
 import BackList from "./components/views/Exercise/Back/BackList";
 import BellyList from "./components/views/Exercise/Belly/BellyList";
+import ChestList from "./components/views/Exercise/Chest/ChestList";
+import WholeList from "./components/views/Exercise/Whole_body/WholeList";
+import ShoulderList from "./components/views/Exercise/Shoulder/ShoulderList";
+import LowerList from "./components/views/Exercise/Lower_body/LowerList";
 
 const App = () => {
     return (
@@ -38,11 +42,10 @@ const App = () => {
                             <Route path="/arm" component={ArmList}/>
                             <Route path="/back" component={BackList}/>
                             <Route path="/belly" component={BellyList}/>
-                            {/*<Route path="/cadio" component={CadioList}/>*/}
-                            {/*<Route path="/chest" component={ChestList}/>*/}
-                            {/*/!*<Route path="/lower_body" component={LowerList}/>*!/*/}
-                            {/*/!*<Route path="/shoulder" component={ShoulderList}/>*!/*/}
-                            {/*/!*<Route path="/whole_body" component={WholeList}/>*!/*/}
+                            <Route path="/chest" component={ChestList}/>
+                            <Route path="/lower_body" component={LowerList}/>
+                            <Route path="/shoulder" component={ShoulderList}/>
+                            <Route path="/whole_body" component={WholeList}/>
                         </Switch>
                     </ScrollToTop>
                 </div>
