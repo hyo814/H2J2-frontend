@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Armpage from "./Armpage";
-import './style.css';
+import './arm.css';
 import {withStyles} from '@material-ui/core/styles';
 import ArmScroll from "./ArmScroll";
 import styled from 'styled-components';

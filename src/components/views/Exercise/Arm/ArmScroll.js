@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import "./style.css"
-import ArmCard from "./ArmCard";
+import "./arm.css"
 import {Table} from "reactstrap";
+import ArmCard from "./ArmCard";
+
 
 class ArmScroll extends Component {
     scrollToChange = (param) => {
@@ -17,6 +18,7 @@ class ArmScroll extends Component {
         const {Videos} = this.props;
         const style = {
             border: '1px solid black'
+            ,top:'-850px'
             , height: '200px'
             , width: '300px'
             , overflow: 'auto'
@@ -29,35 +31,35 @@ class ArmScroll extends Component {
 
         return (
             <>
-            <div
-                id="scroll"
-                style={style}
-                ref={(ref) => {
-                    this.box = ref
-                }}>
-                <Table hover>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>운동 동영상</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {Videos &&
-                    Videos.map((video) => {
-                        return (
-                            <ArmCard
-                                ex_video={video.ex_video}
-                                id={video.id}
-                                name={video.name}
-                                stateRefresh={this.props.stateRefresh}
-                            />
-                        );
-                    })}
-                    </tbody>
-                </Table>
-                <div style={innerStyle}/>
-            </div>
+                <div
+                    id="scroll"
+                    style={style}
+                    ref={(ref) => {
+                        this.box = ref
+                    }}>
+                    <Table hover>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>운동 동영상</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {Videos &&
+                        Videos.map((video) => {
+                            return (
+                                <ArmCard
+                                    ex_video={video.ex_video}
+                                    id={video.id}
+                                    name={video.name}
+                                    stateRefresh={this.props.stateRefresh}
+                                />
+                            );
+                        })}
+                        </tbody>
+                    </Table>
+                    <div style={innerStyle}/>
+                </div>
             </>
         );
     }
