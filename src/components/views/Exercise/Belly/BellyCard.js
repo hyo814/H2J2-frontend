@@ -20,7 +20,7 @@ class BellyCard extends React.Component {
                     {this.props.id}
                 </td >
                 <td style={tablestyle}>
-                   <a href={this.props.ex_video}>{this.props.name}</a>
+                   <a href={this.props.ex_video}  target="_blank">{this.props.name}</a>
                 </td>
             </tr>
         );

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Bellypage from "./Bellypage";
-import './style.css';
+import './belly.css';
 import {withStyles} from '@material-ui/core/styles';
 import BellyScroll from "./BellyScroll";
 import styled from 'styled-components';

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./style.css"
+import "./belly.css"
 import BellyCard from "./BellyCard";
 import {Table} from "reactstrap";
 
@@ -18,6 +18,7 @@ class BellyScroll extends Component {
         const {Videos} = this.props;
         const style = {
             border: '1px solid black'
+            ,top:'-2000px'
             , height: '200px'
             , width: '300px'
             , overflow: 'auto'

@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import DialogContent from "@material-ui/core/DialogContent";
-import "./style.css"
+import "./belly.css"
 
 const styles = theme => ({
 });
