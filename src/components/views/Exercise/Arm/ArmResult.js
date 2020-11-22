@@ -21,7 +21,7 @@ class ArmResult extends Component {
         const { Videos } = this.props;
         return (
             <Div>
-                <p>검색 결과 입니다.</p>
+                <p></p>
                 <Table style={tablestyle} hover>
                     <thead>
                     <tr>
