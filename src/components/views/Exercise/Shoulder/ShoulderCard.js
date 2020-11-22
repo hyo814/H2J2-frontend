@@ -18,7 +18,7 @@ class ShoulderCard extends React.Component {
         return (
             <tr>
                 <td style={tablestyle}>
-                    <ReactPlayer width="500px" height="300px"
+                    <ReactPlayer width="560px" height="300px"
                         url={this.props.ex_video}/>
                 </td>
                 <td style={tablestyle}>
