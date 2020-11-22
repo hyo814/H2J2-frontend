@@ -15,7 +15,7 @@ class Belly extends React.Component {
     render() {
         return (
             <tr>
-                <td> </td>
+                <td>운동</td>
                 <td style={tablestyle}>
                     <a href={this.props.ex_video}>{this.props.name}</a>
                 </td>

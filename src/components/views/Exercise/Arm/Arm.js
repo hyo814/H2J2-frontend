@@ -1,7 +1,5 @@
 import React from "react";
 import cookie from "react-cookies";
-import ReactPlayer from "react-player";
-import CheckCam from "../CheckCam";
 
 const tablestyle = {
     lineHeight: "20px"
@@ -14,10 +12,11 @@ class Arm extends React.Component {
             user_id:cookie.load('user_id')
         }
     }
+
     render() {
         return (
             <tr>
-                <td> </td>
+                <td>운동</td>
                 <td style={tablestyle}>
                     <a href={this.props.ex_video}>{this.props.name}</a>
                 </td>
