@@ -21,7 +21,8 @@ class WholePage extends Component {
         const {Exercises} = this.props;
         return (
             <>
-                <p><h1>큐피트의 건강한 운동 같이 시작해볼까요?<br/></h1></p>
+                <p><h1>운동하는 당신, 응원합니다!<br/></h1></p>
+                자세확인기능으로 정확하게 운동하고, 마일리지도 챙기세요!
                 <Table style={tablestyle} hover>
                     <thead>
                     <tr>
