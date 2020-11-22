@@ -34,13 +34,13 @@ class Header extends Component {
                             <li><a href="/">홈</a></li>
                             <li><a href="#">운동&nbsp;<FiChevronDown/></a>
                                 <ul id="sub-menu">
-                                    <li><a href="#" aria-label="subemenu">팔</a></li>
-                                    <li><a href="#" aria-label="subemenu">어깨</a></li>
-                                    <li><a href="#" aria-label="subemenu">하체</a></li>
-                                    <li><a href="#" aria-label="subemenu">가슴</a></li>
-                                    <li><a href="#" aria-label="subemenu">등</a></li>
-                                    <li><a href="#" aria-label="subemenu">전신</a></li>
-                                    <li><a href="#" aria-label="subemenu">유산소</a></li>
+                                    <li><a href="arm" aria-label="subemenu">팔</a></li>
+                                    <li><a href="shoulder" aria-label="subemenu">어깨</a></li>
+                                    <li><a href="lower_body" aria-label="subemenu">하체</a></li>
+                                    <li><a href="chest" aria-label="subemenu">가슴</a></li>
+                                    <li><a href="back" aria-label="subemenu">등</a></li>
+                                    <li><a href="belly" aria-label="subemenu">배</a></li>
+                                    <li><a href="whole_body" aria-label="subemenu">전신</a></li>
                                 </ul>
                             </li>
                             <li><a href="/food">건강식단</a></li>
