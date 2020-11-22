@@ -54,8 +54,8 @@ class CheckCam extends Component {
 }
 const Div = styled.div`
     position:absolute;
-    top:300px;
-    margin-left: 75%;
+    top:320px;
+    margin-left: 73%;
     text-align: center;
     color: #5c7cfa ;
 `;
